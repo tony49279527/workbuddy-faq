@@ -30,7 +30,6 @@
   }
   .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px;}
 
-  /* header */
   header{
     background:linear-gradient(160deg,#1e3a8a 0%,#2563eb 100%);
     color:#fff;
@@ -46,7 +45,6 @@
     border-radius:999px;font-size:12.5px;
   }
 
-  /* toolbar */
   .toolbar{
     background:var(--card);
     border:1px solid var(--line);
@@ -74,7 +72,6 @@
   button.tb.on{background:var(--brand-soft);border-color:var(--brand);color:var(--brand);}
   .stat{font-size:13px;color:var(--muted);padding:0 2px;}
 
-  /* nav chips */
   nav.chips{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 6px;}
   nav.chips a{
     text-decoration:none;font-size:13.5px;color:var(--muted);
@@ -83,14 +80,12 @@
   }
   nav.chips a:hover{color:var(--brand);border-color:var(--brand);}
 
-  /* section */
   section{margin-top:34px;}
   section h2{
     font-size:17px;margin:0 0 14px;padding-left:11px;
     border-left:3px solid var(--brand);line-height:1.3;
   }
 
-  /* qa card */
   details.qa{
     background:var(--card);
     border:1px solid var(--line);
@@ -114,15 +109,13 @@
     transform:rotate(45deg);transition:transform .2s;
   }
   details.qa[open] summary::after{transform:rotate(-135deg);margin-top:-2px;}
-  .qnum{
-    display:inline-block;min-width:34px;color:var(--brand);
-    font-variant-numeric:tabular-nums;
-  }
+  .qnum{display:inline-block;min-width:38px;color:var(--brand);font-variant-numeric:tabular-nums;}
   .answer{padding:0 18px 18px;font-size:15px;color:#2f3439;}
   .answer p{margin:0 0 10px;}
   .answer p:last-child{margin-bottom:0;}
   .answer a{color:var(--brand);word-break:break-all;}
-  .answer ul{margin:0 0 10px;padding-left:22px;}
+  .answer ol,.answer ul{margin:0 0 10px;padding-left:22px;}
+  .answer li{margin-bottom:4px;}
   .tip{
     background:var(--brand-soft);border-left:3px solid var(--brand);
     padding:10px 13px;border-radius:0 8px 8px 0;margin:0 0 10px;font-size:14.5px;
@@ -132,7 +125,6 @@
   th{background:#fafbfc;font-weight:600;}
   td:first-child{color:var(--muted);white-space:nowrap;}
 
-  /* pending */
   .pending{
     background:var(--warn-bg);border-left:3px solid var(--warn-line);
     padding:9px 13px;border-radius:0 8px 8px 0;
@@ -146,7 +138,6 @@
   }
   body.hide-pending .pending{display:none;}
   body.hide-pending details.qa.draft{display:none;}
-  body.hide-pending .draft-note{display:none;}
 
   .empty{text-align:center;padding:50px 0;color:var(--muted);font-size:14.5px;display:none;}
 
@@ -161,7 +152,7 @@
     .wrap{padding:0 14px 60px;}
     details.qa summary{padding:14px 40px 14px 15px;font-size:15px;}
     .answer{padding:0 15px 15px;}
-    .qnum{min-width:30px;}
+    .qnum{min-width:32px;}
   }
   @media print{
     header{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -175,8 +166,8 @@
 <header>
   <div class="inner">
     <h1>WorkBuddy 常见问题答疑</h1>
-    <p class="sub">从下载安装到购买升级，新客户最常问的问题都在这里</p>
-    <span class="badge" id="verBadge">v0.2 · 2026-09-08</span>
+    <p class="sub">从下载安装到关联下单，新客户最常问的问题都在这里</p>
+    <span class="badge" id="verBadge">v0.3 · 2026-09-08</span>
   </div>
 </header>
 
@@ -185,7 +176,7 @@
   <div class="toolbar">
     <div class="search">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="text" id="q" placeholder="搜索问题关键词，如：几个人、企业版、价格">
+      <input type="text" id="q" placeholder="搜索问题关键词，如：几个人、自购、分配、价格">
     </div>
     <div class="tools">
       <button class="tb" id="togglePending">隐藏待补充</button>
@@ -199,8 +190,9 @@
     <a href="#s2">注册与认证</a>
     <a href="#s3">账号与登录</a>
     <a href="#s4">版本怎么选</a>
-    <a href="#s5">购买</a>
-    <a href="#s6">获取帮助</a>
+    <a href="#s5">关联与下单</a>
+    <a href="#s6">常见困惑</a>
+    <a href="#s7">获取帮助</a>
   </nav>
 
   <div class="empty" id="empty">没有匹配的问题，换个关键词试试</div>
@@ -230,7 +222,7 @@
     <h2>二、注册与认证</h2>
 
     <details class="qa">
-      <summary><span class="qnum">Q3</span>从官网自己注册，还是从你们这里注册？</summary>
+      <summary><span class="qnum">Q3</span>从官网自己注册，还是从我们这里注册？</summary>
       <div class="answer">
         <p>看你的使用场景：</p>
         <ul>
@@ -275,7 +267,7 @@
       <summary><span class="qnum">Q7</span>我想让团队一起用，怎么办？</summary>
       <div class="answer">
         <p>升级企业版。企业版可以在企业账户内统一管理成员，并<b>按需分配席位</b>；人员变动时，席位可以在账户内重新分配，不需要重新购买。</p>
-        <p class="pending"><b>待补充：</b>席位分配操作路径 + 截图</p>
+        <p>买完之后怎么把席位分给同事，见 Q13。</p>
       </div>
     </details>
   </section>
@@ -308,38 +300,95 @@
   </section>
 
   <section id="s5">
-    <h2>五、购买</h2>
+    <h2>五、关联与下单</h2>
 
     <details class="qa">
-      <summary><span class="qnum">Q10</span>企业版在哪里购买？</summary>
+      <summary><span class="qnum">Q10</span>为什么要先关联成为客户？我自己买不行吗？</summary>
       <div class="answer">
-        <p>官方购买入口：</p>
-        <p><a href="https://www.workbuddy.cn/pricing/?tab=enterprise" target="_blank" rel="noopener">https://www.workbuddy.cn/pricing/?tab=enterprise</a></p>
-        <div class="tip">请注意：请使用你已完成实名认证的那个账号登录后再购买，避免账号不一致导致权益归属到其他账户。</div>
-        <div class="tip">购买企业版前，请先联系我们完成注册关联，再走购买流程。</div>
-      </div>
-    </details>
-
-    <details class="qa draft">
-      <summary><span class="qnum">Q11</span>购买后怎么开始使用？<span class="flag">待补充</span></summary>
-      <div class="answer">
-        <p class="pending"><b>待补充：</b>购买后的初始化步骤 —— 成员添加、组织搭建、权限配置</p>
+        <p>企业版走的是腾讯云渠道，流程上是<b>先关联、后下单</b>：</p>
+        <ol>
+          <li>准备一个<b>新的腾讯云账号</b></li>
+          <li>通过我们发给你的邀请链接，关联成为客户</li>
+          <li>关联成功后，再下单购买</li>
+        </ol>
+        <p>自己去腾讯云后台是找不到自购入口的（自购需要换用另一个腾讯云账号走，流程更绕）。所以<b>最省事的做法就是先找我们关联</b>。</p>
+        <div class="tip">需要邀请链接的话，直接联系我们（见 Q18）。</div>
+        <p class="pending"><b>待补充：</b>关联操作的具体步骤截图</p>
       </div>
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q12</span>价格是多少？能开发票吗？</summary>
+      <summary><span class="qnum">Q11</span>企业版在哪里购买？</summary>
+      <div class="answer">
+        <p>腾讯云官方下单页：</p>
+        <p><a href="https://cloud.tencent.com/product/workbuddy-enterprise?Is=sdk-topnav" target="_blank" rel="noopener">https://cloud.tencent.com/product/workbuddy-enterprise?Is=sdk-topnav</a></p>
+        <div class="tip">请先完成 Q10 的关联，再下单，否则下单会受阻。</div>
+        <div class="tip">请使用你已完成实名认证的那个账号登录后再购买，避免账号不一致导致权益归属到其他账户。</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="qnum">Q12</span>一个腾讯云账号能买几个 WorkBuddy 账号？</summary>
+      <div class="answer">
+        <p>可以买<b>多个</b>。按需购买，买完再分配给团队成员即可。</p>
+        <p class="pending"><b>待补充：</b>单个腾讯云账号可购买的数量上限</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="qnum">Q13</span>买完之后怎么分配给同事？</summary>
+      <div class="answer">
+        <p>在<b>管理后台</b>的成员管理里直接添加就行，把席位分给对应同事即可。</p>
+        <p>详细配置指引：<a href="https://www.codebuddy.cn/docs/ide/Codebuddy-enterprise-edition/Codebuddy-enterprise-purchase" target="_blank" rel="noopener">https://www.codebuddy.cn/docs/ide/Codebuddy-enterprise-edition/Codebuddy-enterprise-purchase</a></p>
+        <p class="pending"><b>待补充：</b>成员添加界面的截图</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="qnum">Q14</span>购买完成后，第一步做什么？</summary>
+      <div class="answer">
+        <p>作为企业的第一个账号：<b>先创建企业账号，然后邀请其他成员进入。</b></p>
+        <p>顺序别反，先把企业账号建起来，后续成员邀请、席位分配才顺。</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="qnum">Q15</span>价格是多少？能开发票吗？</summary>
       <div class="answer">
         <p>目前企业版价格为 <b>198 元 / 账号 / 月</b>，发票可以在腾讯云后台自行开具。</p>
+        <p class="pending"><b>待补充：</b>是否有年付优惠 / 多席位折扣</p>
       </div>
     </details>
   </section>
 
   <section id="s6">
-    <h2>六、获取帮助</h2>
+    <h2>六、常见困惑</h2>
 
     <details class="qa">
-      <summary><span class="qnum">Q13</span>使用中遇到问题，怎么找你们？</summary>
+      <summary><span class="qnum">Q16</span>后台显示的还是 CodeBuddy，是不是买错了？</summary>
+      <div class="answer">
+        <p>没有买错，不冲突。</p>
+        <p><b>同一个账号在 WorkBuddy 和 CodeBuddy 里都能使用</b>，后台界面上出现 CodeBuddy 的字样是正常的，不影响你使用企业版的功能。</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="qnum">Q17</span>企业知识库、ima、乐享知识库，这几个有什么区别？</summary>
+      <div class="answer">
+        <ul>
+          <li><b>企业知识库</b>：就是管理后台里的知识库，团队共用</li>
+          <li><b>ima</b>：个人知识库，自己用</li>
+        </ul>
+        <p class="pending"><b>待补充：</b>乐享知识库的定位与是否单独付费</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="s7">
+    <h2>七、获取帮助</h2>
+
+    <details class="qa">
+      <summary><span class="qnum">Q18</span>使用中遇到问题，怎么找你们？</summary>
       <div class="answer">
         <p>直接联系我们：</p>
         <ul>
@@ -363,8 +412,8 @@
 
   function count(){
     var total = items.length;
-    var draft = items.filter(function(d){return d.classList.contains('draft');}).length;
-    stat.textContent = '共 ' + total + ' 问 · 已完整 ' + (total - draft) + ' 问 · 待补充 ' + draft + ' 问';
+    var pend = items.filter(function(d){return d.querySelector('.pending');}).length;
+    stat.textContent = '共 ' + total + ' 问 · 待补充 ' + pend + ' 处';
   }
   count();
 
