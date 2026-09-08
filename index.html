@@ -80,6 +80,39 @@
   }
   nav.chips a:hover{color:var(--brand);border-color:var(--brand);}
 
+  .hot{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 16px 12px;
+    margin:16px 0 0;
+    box-shadow:0 6px 24px rgba(16,24,40,.06);
+    position:relative;z-index:2;
+  }
+  .hot .hot-title{
+    font-size:13px;color:var(--muted);margin:0 0 10px;
+    display:flex;align-items:center;gap:5px;font-weight:600;
+  }
+  .hot .hot-list{display:flex;gap:8px;flex-wrap:wrap;}
+  .hot .hot-list button{
+    font-family:inherit;font-size:13.5px;cursor:pointer;
+    padding:7px 13px;border-radius:999px;
+    border:1px solid #fcd9b6;background:#fff7ed;color:#9a4a09;
+    transition:.15s;display:flex;align-items:center;gap:5px;
+  }
+  .hot .hot-list button:hover{
+    background:#ffedd5;border-color:var(--brand);color:#7c2d12;
+    transform:translateY(-1px);
+  }
+  .hot .hot-list button .n{opacity:.55;font-variant-numeric:tabular-nums;}
+
+  .flag-hot{
+    display:inline-block;margin-left:8px;padding:1px 8px;
+    background:#fff7ed;border:1px solid #fcd9b6;color:#9a4a09;
+    border-radius:999px;font-size:11.5px;font-weight:500;vertical-align:1px;
+  }
+  details.qa:target{border-color:var(--brand);box-shadow:0 0 0 3px rgba(37,99,235,.14);}
+
   section{margin-top:34px;}
   section h2{
     font-size:17px;margin:0 0 14px;padding-left:11px;
@@ -161,7 +194,7 @@
   <div class="inner">
     <h1>WorkBuddy 常见问题答疑</h1>
     <p class="sub">从下载安装到后台管理，新客户最常问的问题都在这里</p>
-    <span class="badge" id="verBadge">v0.4 · 2026-09-08</span>
+    <span class="badge" id="verBadge">v0.5 · 2026-09-08</span>
   </div>
 </header>
 
@@ -189,6 +222,17 @@
     <a href="#s7">常见困惑</a>
     <a href="#s8">获取帮助</a>
   </nav>
+
+  <div class="hot">
+    <div class="hot-title">🔥 客户问得最多的几个，点一下直接看</div>
+    <div class="hot-list">
+      <button data-go="q16"><span class="n">Q16</span>管理后台在哪里</button>
+      <button data-go="q10"><span class="n">Q10</span>为什么要先关联</button>
+      <button data-go="q13"><span class="n">Q13</span>怎么分配给同事</button>
+      <button data-go="q15"><span class="n">Q15</span>价格与开票</button>
+      <button data-go="q21"><span class="n">Q21</span>怎么找你们</button>
+    </div>
+  </div>
 
   <div class="empty" id="empty">没有匹配的问题，换个关键词试试</div>
 
@@ -298,7 +342,7 @@
   <section id="s5">
     <h2>五、关联与下单</h2>
 
-    <details class="qa">
+    <details class="qa" id="q10">
       <summary><span class="qnum">Q10</span>为什么要先关联成为客户？我自己买不行吗？</summary>
       <div class="answer">
         <p>企业版走的是腾讯云渠道，流程上是<b>先关联、后下单</b>：</p>
@@ -333,7 +377,7 @@
       </div>
     </details>
 
-    <details class="qa">
+    <details class="qa" id="q13">
       <summary><span class="qnum">Q13</span>买完之后怎么分配给同事？</summary>
       <div class="answer">
         <p>在<b>管理后台</b>的成员管理里点「添加成员」，填写成员信息即可（会跳转到腾讯统一身份平台）。</p>
@@ -348,10 +392,11 @@
       <div class="answer">
         <p>作为企业的第一个账号：<b>先创建企业账号，然后邀请其他成员进入。</b></p>
         <p>顺序别反，先把企业账号建起来，后续成员邀请、席位分配才顺。</p>
+        <div class="tip">企业账号建好后，登录<b>管理后台</b>操作，后台地址见 <a href="#q16">Q16</a>。</div>
       </div>
     </details>
 
-    <details class="qa">
+    <details class="qa" id="q15">
       <summary><span class="qnum">Q15</span>价格是多少？能开发票吗？</summary>
       <div class="answer">
         <p>目前企业版价格为 <b>198 元 / 账号 / 月</b>，发票可以在腾讯云后台自行开具。</p>
@@ -363,14 +408,15 @@
   <section id="s6">
     <h2>六、后台与团队管理</h2>
 
-    <details class="qa">
-      <summary><span class="qnum">Q16</span>已经成为会员了，管理后台在哪里？</summary>
+    <details class="qa" id="q16">
+      <summary><span class="qnum">Q16</span>已经成为会员了，管理后台在哪里？<span class="flag-hot">高频</span></summary>
       <div class="answer">
         <p>登录地址（复制粘贴到浏览器打开）：</p>
         <p><a href="https://www.codebuddy.cn/login/?platform=admin&amp;state=0&amp;redirect_uri=https%3A%2F%2Fcopilot.tencent.com%2Fadmin%2Foverview" target="_blank" rel="noopener">https://www.codebuddy.cn/login/?platform=admin&amp;state=0&amp;redirect_uri=https%3A%2F%2Fcopilot.tencent.com%2Fadmin%2Foverview</a></p>
         <p>用购买时填写的<b>超级管理员手机号</b>登录，登录成功后会直接进入管理后台（<code>copilot.tencent.com/admin/overview</code>）。</p>
         <div class="tip">支付成功后，后台需要 <b>3–5 分钟</b>配置产品资源，如果刚进去没看到内容，等几分钟再刷新。</div>
         <div class="tip">如果一个人关联了多个企业版后台，登录时要<b>选择刚刚支付成功的那个账号</b>。</div>
+        <div class="tip">建议把这个地址<b>收藏到浏览器书签</b>，下次直接从书签进，不用再翻聊天记录。</div>
         <p>在后台里可以做这些事：添加 / 管理成员、查看和调整用量、扩容许可证、续费。</p>
       </div>
     </details>
@@ -429,7 +475,7 @@
   <section id="s8">
     <h2>八、获取帮助</h2>
 
-    <details class="qa">
+    <details class="qa" id="q21">
       <summary><span class="qnum">Q21</span>使用中遇到问题，怎么找你们？</summary>
       <div class="answer">
         <p>直接联系我们：</p>
@@ -457,6 +503,22 @@
     stat.textContent = '共 ' + items.length + ' 问 · 待补充 ' + pend + ' 处';
   }
   count();
+
+  // 热门问题快捷跳转：清空搜索 → 展开目标 → 滚动定位
+  Array.prototype.slice.call(document.querySelectorAll('.hot-list button')).forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = document.getElementById(btn.getAttribute('data-go'));
+      if (!target) return;
+      if (input.value){
+        input.value = '';
+        input.dispatchEvent(new Event('input'));
+      }
+      target.open = true;
+      target.scrollIntoView({behavior:'smooth', block:'center'});
+      target.style.transition = 'box-shadow .3s';
+      setTimeout(function(){ target.style.boxShadow = ''; }, 1200);
+    });
+  });
 
   input.addEventListener('input', function(){
     var kw = input.value.trim().toLowerCase();
