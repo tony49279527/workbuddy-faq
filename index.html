@@ -157,6 +157,8 @@
   th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;}
   th{background:#fafbfc;font-weight:600;}
   td:first-child{color:var(--muted);white-space:nowrap;}
+  .figure{margin:4px 0 12px;}
+  .figure svg{max-width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;}
 
   .pending{
     background:var(--warn-bg);border-left:3px solid var(--warn-line);
@@ -314,7 +316,7 @@
   <section id="s4">
     <h2>四、个人版 / 企业版怎么选</h2>
 
-    <details class="qa">
+    <details class="qa" id="q8">
       <summary><span class="qnum">Q8</span>个人版和企业版主要区别是什么？</summary>
       <div class="answer">
         <p>核心区别在<b>协作能力</b>：</p>
@@ -326,6 +328,11 @@
           <tr><td>用量管理</td><td>无</td><td>可查看 / 分配成员用量</td></tr>
           <tr><td>适合场景</td><td>个人先上手、熟悉功能</td><td>团队共同使用</td></tr>
         </table>
+        <p style="margin:6px 0 2px;color:var(--muted);font-size:14px;">📊 一图看懂：</p>
+        <div class="figure">
+          <img src="compare-personal-vs-enterprise.jpg" alt="WorkBuddy 个人版与企业版对比" onclick="openLightbox(this.src)">
+        </div>
+        <p class="caption">点击图片可放大查看。看不清可保存到本地。</p>
         <p class="pending"><b>待补充：</b>企业版功能清单、可添加的成员数量、其他企业专属能力</p>
       </div>
     </details>
@@ -567,7 +574,29 @@
   window.addEventListener('beforeprint', function(){
     items.forEach(function(d){d.open = true;});
   });
+
+  // 图片点击放大
+  function openLightbox(src){
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    img.src = src;
+    box.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    var box = document.getElementById('lightbox');
+    box.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeLightbox();
+  });
 </script>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="close" onclick="event.stopPropagation();closeLightbox()">&times;</span>
+  <img id="lightboxImg" src="" alt="大图预览" onclick="event.stopPropagation();closeLightbox()">
+</div>
 
 </body>
 </html>
