@@ -158,7 +158,9 @@
   th{background:#fafbfc;font-weight:600;}
   td:first-child{color:var(--muted);white-space:nowrap;}
   .figure{margin:4px 0 12px;}
-  .figure svg{max-width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;}
+  .figure svg,.figure img{max-width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px;}
+  .figure img{cursor:pointer;}
+  .caption{margin:6px 0 0;color:var(--muted);font-size:13.5px;}
 
   .pending{
     background:var(--warn-bg);border-left:3px solid var(--warn-line);
@@ -196,7 +198,7 @@
   <div class="inner">
     <h1>WorkBuddy 常见问题答疑</h1>
     <p class="sub">从下载安装到后台管理，新客户最常问的问题都在这里</p>
-    <span class="badge" id="verBadge">v0.8 · 2026-09-17</span>
+    <span class="badge" id="verBadge">v0.8.1 · 2026-09-17</span>
   </div>
 </header>
 
