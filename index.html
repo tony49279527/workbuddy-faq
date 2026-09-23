@@ -147,6 +147,22 @@
   .answer p{margin:0 0 10px;}
   .answer p:last-child{margin-bottom:0;}
   .answer a{color:var(--brand);word-break:break-all;}
+  /* 长链接块：左边可点地址，右边一键复制 */
+  .url-box{
+    display:flex;align-items:flex-start;gap:10px;
+    margin:0 0 10px;padding:10px 12px;
+    background:var(--bg);border:1px solid var(--line);border-radius:8px;
+    font-size:13px;line-height:1.6;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  .url-box a{flex:1;min-width:0;overflow-wrap:anywhere;}
+  .url-box .copy{
+    flex:0 0 auto;padding:5px 10px;font-family:inherit;font-size:12.5px;
+    color:var(--muted);background:#fff;border:1px solid var(--line);
+    border-radius:7px;cursor:pointer;white-space:nowrap;transition:.15s;
+  }
+  .url-box .copy:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-soft);}
+  .url-box .copy.done{border-color:#bbf7d0;background:#f0fdf4;color:#15803d;}
   .answer ol,.answer ul{margin:0 0 10px;padding-left:22px;}
   .answer li{margin-bottom:4px;}
   .tip{
@@ -184,6 +200,8 @@
     details.qa summary{padding:14px 40px 14px 15px;font-size:15px;}
     .answer{padding:0 15px 15px;}
     .qnum{min-width:32px;}
+    .url-box{flex-direction:column;align-items:stretch;gap:8px;}
+    .url-box .copy{align-self:flex-start;}
   }
   @media print{
     header{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -198,7 +216,7 @@
   <div class="inner">
     <h1>WorkBuddy 常见问题答疑</h1>
     <p class="sub">从下载安装到后台管理，新客户最常问的问题都在这里</p>
-    <span class="badge" id="verBadge">v0.8.1 · 2026-09-17</span>
+    <span class="badge" id="verBadge">v0.8.2 · 2026-09-23</span>
   </div>
 </header>
 
@@ -424,7 +442,10 @@
       <summary><span class="qnum">Q16</span>已经成为会员了，管理后台在哪里？<span class="flag-hot">高频</span></summary>
       <div class="answer">
         <p>登录地址（复制粘贴到浏览器打开）：</p>
-        <p><a href="https://www.codebuddy.cn/login/?platform=admin&amp;state=0&amp;redirect_uri=https%3A%2F%2Fcopilot.tencent.com%2Fadmin%2Foverview" target="_blank" rel="noopener">https://www.codebuddy.cn/login/?platform=admin&amp;state=0&amp;redirect_uri=https%3A%2F%2Fcopilot.tencent.com%2Fadmin%2Foverview</a></p>
+        <div class="url-box">
+          <a href="https://www.codebuddy.cn/login/?platform=admin&amp;state=0&amp;redirect_uri=https%3A%2F%2Fcopilot.tencent.com%2Fadmin%2Foverview" target="_blank" rel="noopener">https://www.codebuddy.cn/login/?platform=admin&amp;state=0&amp;redirect_uri=https%3A%2F%2Fcopilot.tencent.com%2Fadmin%2Foverview</a>
+          <button class="copy" type="button" aria-label="复制管理后台登录地址" data-copy="https://www.codebuddy.cn/login/?platform=admin&amp;state=0&amp;redirect_uri=https%3A%2F%2Fcopilot.tencent.com%2Fadmin%2Foverview">复制</button>
+        </div>
         <p>用购买时填写的<b>超级管理员手机号</b>登录，登录成功后会直接进入管理后台（<code>copilot.tencent.com/admin/overview</code>）。</p>
         <div class="tip">支付成功后，后台需要 <b>3–5 分钟</b>配置产品资源，如果刚进去没看到内容，等几分钟再刷新。</div>
         <div class="tip">如果一个人关联了多个企业版后台，登录时要<b>选择刚刚支付成功的那个账号</b>。</div>
@@ -514,7 +535,8 @@
   var empty = document.getElementById('empty');
 
   function count(){
-    var pend = items.filter(function(d){return d.querySelector('.pending');}).length;
+    // 统计「待补充」提示条的总条数（一个问答里可能有多条）
+    var pend = document.querySelectorAll('.pending').length;
     stat.textContent = '共 ' + items.length + ' 问 · 待补充 ' + pend + ' 处';
   }
   count();
@@ -575,6 +597,45 @@
 
   window.addEventListener('beforeprint', function(){
     items.forEach(function(d){d.open = true;});
+  });
+
+  // 长链接一键复制：优先用剪贴板 API，不支持则降级为 execCommand，再失败就帮用户选中文字
+  Array.prototype.slice.call(document.querySelectorAll('.url-box .copy')).forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.getAttribute('data-copy') || '';
+      var raw = btn.textContent;
+      function ok(){
+        btn.textContent = '已复制';
+        btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = raw; btn.classList.remove('done'); }, 1600);
+      }
+      function fallback(){
+        var a = btn.parentNode.querySelector('a');
+        if (a && window.getSelection){
+          var range = document.createRange();
+          range.selectNodeContents(a);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+        btn.textContent = '请按 ⌘C';
+        setTimeout(function(){ btn.textContent = raw; }, 2200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(ok, fallback);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        var done = false;
+        try { done = document.execCommand('copy'); } catch (e) { done = false; }
+        document.body.removeChild(ta);
+        done ? ok() : fallback();
+      }
+    });
   });
 
   // 图片点击放大
