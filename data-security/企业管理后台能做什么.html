@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkBuddy 企业版管理后台 · 安全管控能力全览</title>
+<meta name="description" content="企业管理后台能做什么：12 个分区、37 个功能页的安全管控能力全览，含面向财务部门的落地配置清单。">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    background: #f5f6f8; color: #1f2329; line-height: 1.7; font-size: 15px;
+  }
+  .page { max-width: 1080px; margin: 0 auto; background: #fff; padding: 0 0 60px; }
+  header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d5c8a 60%, #3d7ab8 100%);
+    color: #fff; padding: 42px 56px 38px;
+  }
+  header .kicker { font-size: 13px; letter-spacing: 2px; opacity: .8; margin-bottom: 10px; }
+  header h1 { margin: 0 0 12px; font-size: 30px; font-weight: 700; letter-spacing: .5px; }
+  header .sub { font-size: 15px; opacity: .92; }
+  header .meta { margin-top: 20px; font-size: 13px; opacity: .78; border-top: 1px solid rgba(255,255,255,.2); padding-top: 14px; }
+  main { padding: 0 56px; }
+  h2 {
+    font-size: 21px; margin: 44px 0 16px; padding-left: 14px; border-left: 4px solid #2d5c8a;
+    color: #14304d; font-weight: 700;
+  }
+  h3 { font-size: 17px; margin: 28px 0 12px; color: #1a3a5c; font-weight: 600; }
+  h4 { font-size: 15px; margin: 20px 0 8px; color: #2d5c8a; font-weight: 600; }
+  p { margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 22px; font-size: 14px; }
+  th { background: #eef3f8; color: #14304d; text-align: left; padding: 10px 12px; font-weight: 600; border: 1px solid #dbe3ec; }
+  td { padding: 9px 12px; border: 1px solid #e3e8ef; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafbfc; }
+  .card {
+    border: 1px solid #dbe3ec; border-radius: 8px; padding: 18px 20px; margin: 16px 0; background: #fbfcfd;
+  }
+  .card.warn { background: #fff8f0; border-color: #f0d4b0; }
+  .card.danger { background: #fdf2f2; border-color: #f0c0c0; }
+  .card.ok { background: #f2faf5; border-color: #bfe3cd; }
+  .tag {
+    display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 4px;
+    background: #e8eef5; color: #2d5c8a; margin-right: 6px; font-weight: 600;
+  }
+  .tag.yes { background: #e2f5e9; color: #1c7a48; }
+  .tag.no  { background: #f7e6e6; color: #b03a3a; }
+  .tag.beta{ background: #fdf0dd; color: #a86a10; }
+  ul, ol { margin: 10px 0; padding-left: 24px; }
+  li { margin: 6px 0; }
+  code {
+    background: #eef1f5; padding: 1px 6px; border-radius: 4px; font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px; color: #b03a3a;
+  }
+  .toc { background: #f5f8fb; border: 1px solid #dbe3ec; border-radius: 8px; padding: 18px 24px; margin: 26px 0; }
+  .toc ol { columns: 2; margin: 0; }
+  .toc a { color: #2d5c8a; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .lead { font-size: 16px; color: #3a4552; }
+  .num { display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%;
+         background: #2d5c8a; color: #fff; font-size: 12px; margin-right: 8px; font-weight: 700; }
+  .prio-1 { background: #c0392b; }
+  .prio-2 { background: #d68910; }
+  .prio-3 { background: #2471a3; }
+  footer { margin: 50px 56px 0; padding-top: 18px; border-top: 1px solid #e3e8ef; color: #8b95a1; font-size: 13px; }
+  footer a { color: #2d5c8a; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  @media print {
+    body { background: #fff; }
+    .page { max-width: none; }
+    header { padding: 28px 32px; }
+    main { padding: 0 32px; }
+    h2 { page-break-after: avoid; }
+    table, .card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">WORKBUDDY / CODEBUDDY 企业版 · 管理员后台</div>
+  <h1>企业管理后台能做什么</h1>
+  <div class="sub">企业版管理后台的安全管控能力全览 —— 12 个分区、37 个功能页，逐页梳理</div>
+  <div class="meta">
+    整理日期：2026-10-09 &nbsp;|&nbsp; 后台地址：www.codebuddy.cn/admin<br>
+    口径来源：企业版管理后台实际页面（2026-10-09）
+  </div>
+</header>
+
+<main>
+
+<h2 id="s0">0. 一句话先说结论</h2>
+<p class="lead">
+企业版后台一共 <strong>12 个模块分区、37 个功能页</strong>。但对财务部门真正「管得住人、管得住数据」的，
+其实就集中在 <strong>4 个地方</strong>：
+</p>
+<div class="card ok">
+  <ol style="margin:0">
+    <li><strong>安全中心 → 客户端安全</strong>：唯一能真正约束「成员在电脑上能用 AI 干什么」的地方（能读哪些文件、能跑哪些命令、能连哪些网、能不能开完全访问）。<strong>这是对财务最关键的一页。</strong></li>
+    <li><strong>企业设置 → 网络设置（IP 白名单）</strong>：把登录锁在公司出口 IP 上。</li>
+    <li><strong>客户端配置 → 分享与协作</strong>：防止财务数据被一键发布到公网。</li>
+    <li><strong>日志管理 → 对话日志</strong>：合规审计留痕（有前置条件，见第 4 节）。</li>
+  </ol>
+</div>
+<p>
+其余的模块，主要是<strong>分配账号、控制成员能用哪些 AI 能力（模型/技能/专家/连接器）、看用量花销</strong>，
+属于「资源治理」和「成本管理」，安全属性相对弱一些。
+</p>
+
+<div class="toc">
+  <ol>
+    <li><a href="#s1">后台全貌：12 个分区、37 个页面</a></li>
+    <li><a href="#s2">账号与权限：怎么发账号、怎么分权</a></li>
+    <li><a href="#s3">安全中心（重中之重）</a></li>
+    <li><a href="#s4">数据边界与合规</a></li>
+    <li><a href="#s5">资源治理：控制成员能用哪些 AI 能力</a></li>
+    <li><a href="#s6">用量与成本控制</a></li>
+    <li><a href="#s7">财务部门落地配置清单（推荐值）</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">1. 后台全貌：12 个分区、37 个页面</h2>
+<p>左侧导航分 12 个分区（分区本身是分组标题，点开才是页面）：</p>
+<table>
+  <thead>
+    <tr><th style="width:150px">分区</th><th>包含页面</th><th style="width:210px">一句话作用</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>组织概览</strong></td><td>组织概览</td><td>企业信息、订阅、席位、额度、今日用量</td></tr>
+    <tr><td><strong>企业智能体</strong> <span class="tag beta">Beta</span></td><td>快速开始、Agents、Runtimes、Session 列表、凭据管理、自动化任务、评测中心</td><td>自建云端 Agent 与沙箱</td></tr>
+    <tr><td><strong>AI 资源管理</strong></td><td>模型管理、知识库、Playbook、Skill 管理、专家管理、自定义指令、Connector 管理</td><td>决定成员能用哪些 AI 能力</td></tr>
+    <tr><td><strong>客户端配置</strong></td><td>客户端定制、助理渠道设置、分享与协作</td><td>改客户端界面 / 管分享渠道</td></tr>
+    <tr><td><strong>安全中心</strong></td><td>综合管理、客户端安全</td><td><strong>安全管控总入口</strong></td></tr>
+    <tr><td><strong>订阅与用量</strong></td><td>订阅管理、成员用量、组织用量、应用用量、用量明细</td><td>席位、额度、花销</td></tr>
+    <tr><td><strong>数据统计</strong></td><td>研效看板、明细数据</td><td>活跃/对话/补全/代码生成统计</td></tr>
+    <tr><td><strong>成员授权</strong></td><td>成员与部门、成员审核、管理员角色</td><td>发账号、审批、分管理员</td></tr>
+    <tr><td><strong>企业设置</strong></td><td>基础设置、网络设置、计量设置</td><td>企业信息、IP 白名单、计量周期</td></tr>
+    <tr><td><strong>开放与集成</strong></td><td>组织架构同步、开放平台、API 管理</td><td>对接 OneID、发 API Key</td></tr>
+    <tr><td><strong>日志管理</strong></td><td>操作日志、对话日志</td><td>审计留痕</td></tr>
+    <tr><td><strong>订单管理</strong></td><td>订单列表</td><td>订单记录</td></tr>
+  </tbody>
+</table>
+
+<h2 id="s2">2. 账号与权限：怎么发账号、怎么分权</h2>
+
+<h3>2.1 成员与部门 <span class="tag">/admin/member/list</span></h3>
+<div class="card warn">
+  <strong>关键点：这一页是「只读」的。</strong><br>
+  页面明确写着：<em>「数据来源于统一身份（OneID）」「成员与部门变更请前往 OneID 管理后台完成；本页提供只读浏览与授权管理。」</em><br>
+  也就是说——<strong>加人、减人、改部门，不在这里做，要去「腾讯统一身份」平台做</strong>，做完自动同步过来。
+  这里只能做两件事：<strong>授权客户端 / 取消授权</strong>。
+</div>
+<p>对企业管理员来说，这就是「分配账号」的真实链路：</p>
+<ol>
+  <li>去腾讯统一身份（OneID）平台 → 把员工加进企业通讯录、划好部门；</li>
+  <li>回到本后台 →「成员与部门」里给该成员<strong>授权客户端</strong>；</li>
+  <li>回到「订阅管理」→ 确认<strong>席位</strong>够用（席位是有限资源，需按实际人数配置）。</li>
+</ol>
+<p>页面顶部还有一步引导：<em>「成员添加完成后，可分配成员许可证。分配完成后成员可使用客户端。」</em></p>
+
+<h3>2.2 成员审核 <span class="tag">/admin/member/qualification</span></h3>
+<p>处理成员自己发起的加入申请。分「待审核 / 已审核」两个页签，操作有三档：</p>
+<ul>
+  <li><strong>通过并分配席位</strong>（一步到位：批准 + 给席位）</li>
+  <li><strong>仅通过</strong>（批准但不给席位，需再单独授权）</li>
+  <li><strong>拒绝</strong></li>
+</ul>
+<p>列表字段：ID、姓名、成员来源、邀请人、申请时间、操作。</p>
+
+<h3>2.3 管理员角色 <span class="tag">/admin/member/role</span></h3>
+<p>权限分级的地方。预置一个「<strong>超级管理员</strong>」角色（具备后台管理所有权限），可以：</p>
+<ul>
+  <li><strong>添加角色</strong>：自定义角色，按需给权限（不必人人都给超级管理员）</li>
+  <li><strong>添加超级管理员</strong>：把某人设成超管</li>
+  <li>移除角色</li>
+</ul>
+<div class="card">
+  <strong>财务部门的用法建议：</strong>财务同事一律给<strong>普通成员</strong>，不要给管理员。
+  如果确实需要一个「财务侧对接人」来管本部门的策略和用量，再<strong>单独建一个受限角色</strong>给他，而不是直接给超管。
+</div>
+
+<h2 id="s3">3. 安全中心（重中之重）</h2>
+
+<h3>3.1 综合管理 <span class="tag">/admin/security/general</span></h3>
+<p>定位是「企业安全相关的所有管控开关统一入口」。目前「AI资产」下有一个开关：</p>
+<table>
+  <thead><tr><th style="width:220px">开关</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>技能安装安全</strong><br><span style="color:#8b95a1;font-size:13px">客户端禁止安装高风险技能</span></td>
+      <td>开启后，端侧导入技能时若安全检测判定为<strong>高风险则禁止安装</strong>，且<strong>不可跳过检测</strong>直接安装；关闭则允许安装。<br>
+      <em>（建议开启。技能/插件是外部代码，是数据外泄的一条隐蔽通道。）</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>3.2 客户端安全 <span class="tag">/admin/security/client</span></h3>
+
+<h4>先看「适用产品」范围</h4>
+<table>
+  <thead><tr><th>产品</th><th style="width:140px">是否支持</th></tr></thead>
+  <tbody>
+    <tr><td>CodeBuddy（IDE / VS Code / JetBrains 插件）</td><td><span class="tag no">暂不支持</span></td></tr>
+    <tr><td><strong>WorkBuddy（桌面端）</strong></td><td><span class="tag yes">支持</span></td></tr>
+    <tr><td>企业智能体</td><td><span class="tag no">暂不支持</span></td></tr>
+  </tbody>
+</table>
+<p>页面原话：<em>「用安全策略统一约束成员在客户端可以做什么：能读写哪些文件、能执行哪些命令、能访问哪些网络、以及是否开放内置运行时。为不同部门或成员创建不同策略，即可按需收紧或放开。」</em></p>
+
+<h4>三条机制，先记住</h4>
+<div class="card">
+  <ol style="margin:0">
+    <li><strong>企业策略是「底线」</strong>：下发的策略在客户端作为企业底线，成员可以在此基础上叠加更严格的个人配置，<strong>但不可突破企业策略的限制</strong>。</li>
+    <li><strong>多策略命中，只生效一条</strong>：当一名成员同时命中多条企业策略时，<strong>只有优先级数字最大的那一条整体生效</strong>（数字越大优先级越高）。</li>
+    <li><strong>生效有时效</strong>：策略保存/启停后，成员<strong>重启客户端立即生效</strong>；不重启则由客户端按约 <strong>10 分钟</strong>周期自动同步。</li>
+  </ol>
+</div>
+
+<h4>新建一条策略，能配什么</h4>
+<p>点「新建策略」进入配置页，分 <strong>基本信息 + 4 个配置分页 + 生效范围</strong>：</p>
+
+<table>
+  <thead><tr><th style="width:150px">分页</th><th style="width:230px">配置项</th><th>作用与细节</th></tr></thead>
+  <tbody>
+    <tr>
+      <td rowspan="5"><strong>沙箱安全</strong></td>
+      <td>沙箱安全总开关</td>
+      <td>关闭后，<strong>文件保护 / 命令控制 / 网络访问</strong>三模块规则<strong>全部不生效</strong>。</td>
+    </tr>
+    <tr>
+      <td>允许对话内开启完全访问</td>
+      <td>关闭后，成员<strong>无法在客户端对话里切到「完全访问」模式</strong>，所有操作强制在安全沙箱约束内。<br>
+      <em>该配置独立于沙箱总开关与下方的文件/命令/网络规则，互不影响。</em></td>
+    </tr>
+    <tr>
+      <td>安全规则（按路径配置）</td>
+      <td>每条路径可对 <strong>读 / 写 / 删除</strong> 分别设置 <strong>允许 / 询问 / 禁止</strong>；列表靠前的规则优先生效。</td>
+    </tr>
+    <tr>
+      <td>命令规则（按前缀配置）</td>
+      <td>按<strong>前缀</strong>匹配（空格切分），如「<code>git push</code>」匹配以 git push 开头的命令；列表靠前的规则优先生效。</td>
+    </tr>
+    <tr>
+      <td>网络访问</td>
+      <td>可配「禁止全部对外访问」+ 例外白名单：<em>「禁止全部对外访问」时，例外白名单外的域名一律拦截。</em></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>数据安全</strong></td>
+      <td>删除保护</td>
+      <td>文件删除的保护开关。</td>
+    </tr>
+    <tr>
+      <td>批量删除审批阈值</td>
+      <td>单次删除文件数<strong>超过该阈值时需审批</strong>。</td>
+    </tr>
+    <tr>
+      <td><strong>内置运行时</strong></td>
+      <td>总开关 + 工具清单</td>
+      <td>工具清单含：<strong>Node.js、Python、Git Bash、Brokered Shell</strong>。不需要跑脚本的岗位可以直接关掉。</td>
+    </tr>
+    <tr>
+      <td><strong>敏感数据保护</strong></td>
+      <td>总开关 + 添加规则</td>
+      <td>总开关说明原文：<em>「关闭后，下方数据检测规则全部不生效（规则仍保留，可先关着攒规则）。开启后规则随策略下发到成员客户端，<strong>命中时触发敏感信息确认弹框</strong>。」</em></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>生效范围</strong></td>
+      <td>可 <strong>+部门</strong> / <strong>+成员</strong> 逐条指定。给财务单独建策略，就是在这里选「财务部」。</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>基本信息</strong></td>
+      <td>策略名称、描述、<strong>优先级</strong>（数字越大越高）、启用开关。</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="card ok">
+  <strong>为什么这一页对财务最重要？</strong><br>
+  它是整个后台里<strong>唯一一个能真正落到「成员本机行为」上的管控点</strong>：
+  别的开关（模型、连接器、知识库）管的是「AI 能拿到什么」，
+  而沙箱策略管的是「AI 在你电脑上能碰什么、能发到哪去」。
+  财务的数据敏感度最高，这一页必须配。
+</div>
+
+<h2 id="s4">4. 数据边界与合规</h2>
+
+<h3>4.1 网络设置 · IP 白名单 <span class="tag">/admin/setting/network</span></h3>
+<p>页面原话：<em>「配置允许访问的 IP 网段，增强企业数据安全性；IP 白名单作用于代码助手客户端，被限制的 IP 将无法登录客户端并使用。」</em></p>
+<p>规则（页面上写得很明确）：</p>
+<ul>
+  <li>多个 IP 用<strong>英文逗号</strong>隔开，逗号前后<strong>不加空格</strong>；</li>
+  <li>只填 <code>127.0.0.1</code> = <strong>禁止所有 IP 访问</strong>；</li>
+  <li>不填 = <strong>允许所有 IP</strong>（默认）；</li>
+  <li>支持网段写法，如 <code>10.10.10.0/24</code>。</li>
+</ul>
+<p>页面会显示「您当前 IP」并支持一键复制，方便把出口 IP 加进去。</p>
+<div class="card warn">
+  <strong>对财务的用法：</strong>把白名单收窄到<strong>公司办公网出口 IP</strong>。
+  这样即使账号密码泄露、或员工离职后在家里/外面登录，也用不了客户端。
+  <br><em>注意副作用：员工出差、居家办公也会被一起挡在外面——所以要么先确认公司是否有固定出口 IP，要么配合 VPN 使用。</em>
+</div>
+
+<h3>4.2 分享与协作 <span class="tag">/admin/client-config/share-collab</span></h3>
+<p>管「成员在客户端分享 / 协作时能对外到什么范围」。<strong>两项独立配置</strong>，保存后约 <strong>1 分钟</strong>在客户端生效。</p>
+<table>
+  <thead><tr><th style="width:120px">项目</th><th>可选项</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>发布范围</strong></td>
+      <td>
+        ① <strong>仅支持组织内可见</strong>（推荐 · 默认）<br>
+        ② 支持组织内可见和全网可见
+      </td>
+      <td>①的组织外账号即便拿到链接也无法访问；②允许成员手动切到「全网可见」，<strong>但默认值仍是「仅组织内」</strong>。</td>
+    </tr>
+    <tr>
+      <td><strong>协作范围</strong></td>
+      <td>
+        ① <strong>仅支持组织内可见</strong>（推荐 · 默认）<br>
+        ② 支持组织内可见和全网可见
+      </td>
+      <td>同上逻辑，管的是「邀请谁一起协作」。①时组织外账号即使收到邀请也无法加入。</td>
+    </tr>
+  </tbody>
+</table>
+<div class="card danger">
+  <strong>对财务：两项都必须选「仅支持组织内可见」。</strong>
+  页面特别提示了一句——<em>即便开启「全网可见」，客户端默认仍为「仅组织内」，需成员手动切换</em>。
+  也就是说，只要开了②，就<strong>存在成员自己把财报、客户名单发到公网的可能</strong>。财务场景不该留这个口子。
+</div>
+
+<h3>4.3 日志管理</h3>
+<table>
+  <thead><tr><th style="width:140px">页面</th><th>能力</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>操作日志</strong><br><span style="color:#8b95a1;font-size:13px">/admin/log/list</span></td>
+      <td>记录后台管理操作。字段：操作、操作内容、操作端、操作人、<strong>IP 地址</strong>、操作时间。支持按「今日 / 昨日 / 近3天 / 近7天」筛选。<br><em>这是「谁改了配置」的追溯依据。</em></td>
+    </tr>
+    <tr>
+      <td><strong>对话日志</strong><br><span style="color:#8b95a1;font-size:13px">/admin/log/sessions</span></td>
+      <td>页面定位：<em>「记录团队成员与 AI 的完整对话，支持追踪使用情况与合规审计」</em>。有一个「<strong>开启对话日志</strong>」总开关。</td>
+    </tr>
+  </tbody>
+</table>
+<div class="card warn">
+  <strong>对话日志的三个必须知道的前置条件（页面原文）：</strong>
+  <ol style="margin:8px 0 0">
+    <li>开启后<strong>自动记录所有对话</strong>；</li>
+    <li><strong>关闭前已有的记录将被清除</strong>；</li>
+    <li>页面明确警告：<em>「日志内容可能涉及代码、业务数据等敏感信息，请确认已获得相应授权并告知团队成员后再开启。」</em></li>
+  </ol>
+  换句话说，它是一把双刃剑：既是最好的审计手段，也是<strong>全员的对话留痕</strong>。
+  对财务这类敏感岗位，合规上往往需要开，但<strong>必须走「告知 + 授权」流程</strong>，否则触碰员工隐私，反而给自己埋雷。
+</div>
+
+<h2 id="s5">5. 资源治理：控制成员能用哪些 AI 能力</h2>
+<p>这一块的作用是——<strong>不让成员自己乱接外部系统、乱装东西</strong>。几乎每一页都带一个「<strong>下发策略</strong>」和「<strong>可见范围</strong>」，逻辑一致：企业先建好，再决定发给谁。</p>
+<table>
+  <thead><tr><th style="width:130px">页面</th><th style="width:150px">适用产品</th><th>关键能力</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>模型管理</strong></td>
+      <td>—</td>
+      <td>23 个内置模型（混元、DeepSeek、GLM、Space-Bunny 等），每个可设「<strong>可见范围</strong>」和「<strong>可见端</strong>」（CodeBuddyIDE / CLI / WorkBuddy / CloudAgent / VSCode / JetBrains / VisualStudio）；支持「模型策略」「成员自定义模型」。<br><em>对财务：可以把模型收敛到少数几个，避免数据流向不明确的模型。</em></td>
+    </tr>
+    <tr>
+      <td><strong>知识库</strong></td>
+      <td>CodeBuddy <span class="tag yes">支持</span><br>WorkBuddy <span class="tag no">暂不支持</span></td>
+      <td>企业级知识库（自定义知识库 / 官方知识库）。</td>
+    </tr>
+    <tr>
+      <td><strong>Skill 管理</strong></td>
+      <td>三端 <span class="tag yes">都支持</span></td>
+      <td>Skill 列表、分类管理、<strong>Skill 下发策略</strong>、成员自定义 Skill（内置 10000+）。</td>
+    </tr>
+    <tr>
+      <td><strong>专家管理</strong></td>
+      <td>WorkBuddy / 企业智能体 <span class="tag yes">支持</span></td>
+      <td>专家列表、分类管理、<strong>专家下发策略</strong>、企业自建专家。</td>
+    </tr>
+    <tr>
+      <td><strong>Connector 管理</strong></td>
+      <td>WorkBuddy / 企业智能体 <span class="tag yes">支持</span></td>
+      <td>连接外部服务（GitHub、Figma、腾讯文档等）。含 <strong>下发策略</strong> + <strong>成员自定义连接器</strong>开关。<br><em>对财务：这是「AI 能连到哪些外部系统」的总闸，比如能不能连 ERP、网银。</em></td>
+    </tr>
+    <tr>
+      <td><strong>自定义指令</strong></td>
+      <td>CodeBuddy <span class="tag yes">支持</span><br>WorkBuddy <span class="tag no">暂不支持</span></td>
+      <td>全局提示词（给全公司下统一的 AI 行为规范）。</td>
+    </tr>
+    <tr>
+      <td><strong>Playbook</strong></td>
+      <td>—</td>
+      <td>20 个现成 Agent 范例（含数据分析师、ERP 报表分析、SRE 事件响应等），可一键导入。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>企业智能体（Beta）</h3>
+<p>除了「给个人配能力」，企业还能自己<strong>造 Agent</strong>：</p>
+<ul>
+  <li><strong>快速开始</strong>：用自然语言描述需求，AI 自动生成 Agent 配置。自带模板——CRM 销售助手、<strong>ERP 报表分析</strong>（财务数据拉取、异常指标识别、月度经营报告生成）、代码评审助手等。</li>
+  <li><strong>Agents</strong>：Agent = 模型 + 系统提示词 + 技能工具。分享给成员后，<strong>每个人打开都是独立 Session + 独立云端沙箱</strong>，对话与文件在该 Session 内持久保存。带「下发策略」。</li>
+  <li><strong>Runtimes</strong>：Session 背后真正跑的云端沙箱（独立文件系统、进程、网络）。运维视角，状态有「运行中 / 休眠 / 失败」，用于排障。</li>
+  <li><strong>凭据管理</strong>：<strong>对财务很重要</strong>。凭据加密存储，Agent 调 MCP / Skill / 外部 API 时由代理层在运行时解密注入，<strong>不用在代码或配置里写明文密钥</strong>。</li>
+  <li><strong>自动化任务</strong>：设执行频率 + 提示词，到点自动跑，结果可投递到飞书 / 企微 / 钉钉 / QQ，也可在执行记录中追溯；单次最长 30 分钟，任务数不限。</li>
+  <li><strong>评测中心</strong>：评测/质量验证。</li>
+</ul>
+
+<h3>助理渠道设置 <span class="tag">/admin/client-config/channel</span></h3>
+<p>一个「助理渠道总开关」（关闭后企业全部助理渠道不可用）+ 渠道清单，逐项可「编辑」（设可见范围、启用）：</p>
+<p>微信助理(Bot)、微信客服号、企微助理、企业微信集成、QQ 机器人、钉钉、飞书。</p>
+<p><em>开关变更即时生效，客户端约 5 分钟内同步。</em></p>
+
+<h3>客户端定制 <span class="tag">/admin/client-config/custom</span></h3>
+<p>管 WorkBuddy 桌面端左侧导航的菜单：内置菜单（新建任务、助理、项目、专家·技能·连接器、定时任务、资料库、更多）由平台预置，<strong>可启停 / 排序 / 改显示名（中英文）/ 改图标，不可移除</strong>；还能<strong>通过 iframe 嵌入企业自有 Web</strong> 做自建菜单。整体编辑、整体发布。</p>
+<div class="card">
+  <strong>可按部门单独定制菜单：</strong>比如给财务部门只留「助理 · 定时任务 · 资料库」，把研发向的入口收起来，界面更干净，上手更快。
+</div>
+
+<h2 id="s6">6. 用量与成本控制</h2>
+<table>
+  <thead><tr><th style="width:150px">页面</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td><strong>订阅管理</strong></td><td>当前版本、订阅状态、到期时间、剩余天数；<strong>席位管理</strong>（全部 / 已授权 / 未授权 / 使用率，可变配席位）；月固定用量（固定额度 / 已使用 / 剩余 / 下次重置）；加量包（剩余用量、自动续购开关）。<br>抵扣顺序：<em>按到期时间先后优先抵扣即将到期的用量。</em></td></tr>
+    <tr><td><strong>成员用量 / 组织用量 / 应用用量 / 用量明细</strong></td><td>按成员、按组织、按应用维度看消耗，可下钻明细。</td></tr>
+    <tr><td><strong>计量设置</strong><br><span style="color:#8b95a1;font-size:13px">/admin/setting/metering-settings</span></td><td><strong>限量周期模式</strong>二选一：<br>① 默认（按订阅生效日切片）——从订阅生效日起每满 1 个月刷新已用量；<br>② 自然月（每月 1 日 00:00 刷新）——严格按自然月切片，与订阅生效日无关。<br><em>选②更好对账（财务口径天然就是自然月）。</em></td></tr>
+  </tbody>
+</table>
+<div class="card ok">
+  <strong>对财务的用法：</strong>给财务部门<strong>单独设限量</strong>（成员/部门限量），既是成本控制，也是「用量异常」的预警手段——
+  某个账号突然烧掉大量额度，往往说明用法跑偏或出了状况。
+</div>
+
+<h3>数据统计</h3>
+<p><strong>研效看板</strong>（/admin/dashboard/panel）：活跃情况（活跃用户数、补全活跃、对话活跃）、对话指标（对话次数、使用指令次数、引用上下文次数、使用智能体/知识库次数）、补全指标（生成/采纳/采纳率）、代码生成指标（AI 生成行数、总新增行数、生成率）。支持按<strong>部门 / 客户端 / 插件版本</strong>分布，可「导出数据」。另有「明细数据」页。</p>
+
+<h2 id="s7">7. 财务部门落地配置清单（推荐值）</h2>
+<p>把上面的东西收成一张「照做就行」的表。按优先级排序，<span class="num prio-1">1</span> 是必做。</p>
+<table>
+  <thead>
+    <tr><th style="width:44px">优先</th><th style="width:190px">配置位置</th><th style="width:170px">建议值</th><th>为什么</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="num prio-1">1</span></td>
+      <td><strong>客户端安全</strong><br>新建「财务部」策略<br>优先级设为最高</td>
+      <td>生效范围 = 财务部</td>
+      <td>多策略命中只生效优先级最高的那条，所以财务策略必须压在最上面，确保底线性。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-1">1</span></td>
+      <td>└ 沙箱安全 → <br><strong>允许对话内开启完全访问</strong></td>
+      <td><strong>关闭</strong></td>
+      <td>关掉后成员无法切「完全访问」，所有操作强制在沙箱约束内。这是整个后台最硬的一道锁。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-1">1</span></td>
+      <td>└ 沙箱安全 → <br><strong>安全规则（按路径）</strong></td>
+      <td>财务目录：<br>读=允许<br>写=<strong>询问</strong>或禁止<br>删除=<strong>禁止</strong></td>
+      <td>把「财务数据目录」「共享盘」单独列出来管，读写删分开控制。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-1">1</span></td>
+      <td><strong>分享与协作</strong></td>
+      <td>发布范围 + 协作范围<br>都选「<strong>仅支持组织内可见</strong>」</td>
+      <td>堵死「一键把财报/客户名单发布到公网」这条路。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-2">2</span></td>
+      <td>└ 沙箱安全 → <br><strong>命令规则（按前缀）</strong></td>
+      <td>禁用危险前缀，如<br><code>rm</code> / <code>del</code> / <code>curl</code> / <code>scp</code></td>
+      <td>防止批量删除、防止把本地文件上传到外部。按前缀匹配，配置成本低。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-2">2</span></td>
+      <td>└ 沙箱安全 → <br><strong>网络访问</strong></td>
+      <td>「禁止全部对外访问」<br>+ 白名单只放开必要域名</td>
+      <td>数据外传的最后一道闸。白名单外的域名一律拦截。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-2">2</span></td>
+      <td>└ <strong>数据安全</strong></td>
+      <td>删除保护 <strong>开启</strong><br>批量删除阈值 <strong>调低</strong>（如 3）</td>
+      <td>误删/恶意删除要有拦阻和审批。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-2">2</span></td>
+      <td>└ <strong>敏感数据保护</strong></td>
+      <td>总开关 <strong>开启</strong><br>加规则：身份证号、银行卡号、金额等</td>
+      <td>命中的时候会弹「敏感信息确认框」，等于给外发动作加一道人工确认。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-2">2</span></td>
+      <td><strong>网络设置 → IP 白名单</strong></td>
+      <td>填写公司出口 IP / 网段</td>
+      <td>登录层锁死来源。离职、外网登录直接失效。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td>└ <strong>内置运行时</strong></td>
+      <td>按需关闭<br>（如关掉 Node.js / Python）</td>
+      <td>财务日常不需要跑脚本，关掉等于少一整套执行能力。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td><strong>综合管理 → 技能安装安全</strong></td>
+      <td><strong>开启</strong>（禁止装高风险技能）</td>
+      <td>技能是外部代码，是隐蔽的数据通道。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td><strong>Connector 管理 → 下发策略</strong></td>
+      <td>只下发财务需要的<br>（如腾讯文档）；关自定义</td>
+      <td>管住「AI 能连哪些外部系统」。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td><strong>模型管理 → 可见范围</strong></td>
+      <td>只放开选定模型与端</td>
+      <td>避免数据流向不明确的模型。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td><strong>计量设置</strong></td>
+      <td>限量周期选「<strong>自然月</strong>」<br>+ 给财务设部门限量</td>
+      <td>好对账；用量异常可预警。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td><strong>管理员角色</strong></td>
+      <td>财务一律「普通成员」<br>如需对接人，另建受限角色</td>
+      <td>最小权限原则。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td><strong>对话日志</strong></td>
+      <td>按合规要求决定；<br>开启前走「告知 + 授权」</td>
+      <td>审计需要，但涉及全员留痕，流程要合规。</td>
+    </tr>
+    <tr>
+      <td><span class="num prio-3">3</span></td>
+      <td><strong>客户端定制</strong></td>
+      <td>给财务做一套精简菜单</td>
+      <td>降低认知负担，上手更快。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="color:#8b95a1;font-size:13.5px">
+  另：成员与部门数据来自「腾讯统一身份（OneID）」，后台只读；账号/组织维护要去 OneID 平台。「开放与集成 → API 管理」页已提示旧功能迁移到新版开放平台。
+</p>
+
+</main>
+
+<footer>
+  本文档整理自 CodeBuddy / WorkBuddy 企业版管理后台实际页面（2026-10-09）&nbsp;|&nbsp; 官方表述以腾讯最新文档为准 &nbsp;|&nbsp; <a href="./">返回专题目录</a>
+</footer>
+
+</div>
+</body>
+</html>

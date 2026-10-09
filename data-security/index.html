@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkBuddy 数据安全 · 资料目录</title>
+<meta name="description" content="WorkBuddy 数据安全说明与企业版管理后台安全管控能力全览，含官方文档出处与面向财务部门的落地配置清单。">
+<style>
+  :root{
+    --ink:#16202b; --ink-2:#47525f; --ink-3:#7c8794;
+    --line:#e5e9ee; --bg:#f5f6f8; --card:#fff;
+    --blue:#1f6feb; --blue-d:#0f3d6e;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;padding:56px 20px 80px;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;}
+  header{
+    background:linear-gradient(135deg,#0f3d6e 0%,#1f6feb 62%,#2e8ef0 100%);
+    color:#fff;padding:38px 40px;border-radius:18px;margin-bottom:26px;
+    box-shadow:0 10px 30px rgba(15,61,110,.20);
+  }
+  header h1{margin:0 0 10px;font-size:27px;letter-spacing:.5px;}
+  header .sub{opacity:.93;font-size:14.5px;max-width:640px;}
+  header .meta{margin-top:16px;font-size:12.5px;opacity:.85;}
+
+  .grid{display:grid;gap:16px;}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr;}}
+  a.doc{
+    display:block;text-decoration:none;color:inherit;background:var(--card);
+    border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:14px;
+    padding:22px 24px;box-shadow:0 2px 12px rgba(20,30,50,.045);transition:.18s;
+  }
+  a.doc:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,30,50,.10);border-left-color:#0f3d6e;}
+  a.doc .idx{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--blue);opacity:.8;}
+  a.doc h2{margin:6px 0 10px;font-size:18px;line-height:1.45;}
+  a.doc p{margin:0;font-size:13.5px;color:var(--ink-2);}
+  a.doc ul{margin:12px 0 0;padding-left:18px;font-size:13px;color:var(--ink-3);}
+  a.doc li{margin:3px 0;}
+  a.doc .go{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--blue);}
+
+  .note{
+    margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 24px;font-size:13px;color:var(--ink-3);box-shadow:0 2px 12px rgba(20,30,50,.045);
+  }
+  .note b{color:var(--ink-2);}
+  .note a{color:var(--blue);text-decoration:none;word-break:break-all;}
+  .note a:hover{text-decoration:underline;}
+  footer{margin-top:34px;text-align:center;font-size:12px;color:var(--ink-3);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>WorkBuddy 数据安全 · 资料目录</h1>
+    <div class="sub">数据会不会被用于模型训练、数据怎么隔离、企业版后台能做什么管控 —— 每一项结论都标注腾讯官方文档出处，可逐条核对。</div>
+    <div class="meta">整理日期：2026-10-09 ｜ 官方表述以腾讯最新文档为准</div>
+  </header>
+
+  <div class="grid">
+    <a class="doc" href="./WorkBuddy数据安全说明.html">
+      <div class="idx">01</div>
+      <h2>WorkBuddy 数据安全说明</h2>
+      <p>回答最关心的那个问题，并给出完整的隔离体系与管控能力全貌。</p>
+      <ul>
+        <li>数据会不会被用于训练（四处官方原文）</li>
+        <li>数据流向图：文件本体不出电脑</li>
+        <li>四层隔离体系 + 三档部署模式</li>
+        <li>客户端「安全中心」能力清单</li>
+        <li>合规认证与官方文档链接清单</li>
+      </ul>
+      <span class="go">打开阅读 →</span>
+    </a>
+
+    <a class="doc" href="./企业管理后台能做什么.html">
+      <div class="idx">02</div>
+      <h2>企业管理后台能做什么</h2>
+      <p>企业版管理后台的安全管控能力全览，逐页梳理 12 个分区、37 个功能页。</p>
+      <ul>
+        <li>后台全貌与账号权限体系</li>
+        <li>安全中心：唯一能落到成员本机行为的管控</li>
+        <li>IP 白名单 / 分享与协作 / 日志留痕</li>
+        <li>资源治理与用量成本控制</li>
+        <li>财务部门落地配置清单（按优先级）</li>
+      </ul>
+      <span class="go">打开阅读 →</span>
+    </a>
+  </div>
+
+  <div class="note">
+    <b>关于本文档的依据：</b>所有结论均来自腾讯官方文档、官网 FAQ、服务协议与隐私保护指引，以及企业版管理后台的实际页面。
+    最核心的官方依据页是
+    <a href="https://cloud.tencent.com/document/faq/1831/134405" target="_blank">cloud.tencent.com/document/faq/1831/134405</a>
+    （数据安全说明 / 三层纵深防御 / VPC 专享版 / 合规资质）。
+  </div>
+
+  <footer>
+    官方表述以腾讯最新文档为准
+  </footer>
+
+</div>
+</body>
+</html>
