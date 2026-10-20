@@ -216,7 +216,7 @@
   <div class="inner">
     <h1>WorkBuddy 常见问题答疑</h1>
     <p class="sub">从下载安装到后台管理，新客户最常问的问题都在这里</p>
-    <span class="badge" id="verBadge">v0.8.4 · 2026-10-09</span>
+    <span class="badge" id="verBadge">v0.9.0 · 2026-10-20</span>
   </div>
 </header>
 
@@ -243,6 +243,9 @@
     <a href="#s6">后台与团队</a>
     <a href="#s7">常见困惑</a>
     <a href="#s8">获取帮助</a>
+    <a href="#s9">手机与移动端</a>
+    <a href="#s10">企业微信集成</a>
+    <a href="#s11">Outlook 接入</a>
   </nav>
 
   <div class="hot">
@@ -527,6 +530,154 @@
           <li><b>电话 / 微信</b>：13572927148</li>
         </ul>
         <p>不管是关联、下单、分配席位还是后台操作，任何环节卡住了都可以直接问他。</p>
+      </div>
+    </details>
+  </section>
+
+  <section id="s9">
+    <h2>九、手机与移动端</h2>
+
+    <details class="qa" id="q22">
+      <summary><span class="qnum">Q22</span>手机上能用 WorkBuddy 吗？必须开着电脑吗？</summary>
+      <div class="answer">
+        <p>能。手机端有 <b>iOS / Android / 鸿蒙 App</b> 和 <b>微信小程序</b> 两个入口，支持两种模式：</p>
+        <table>
+          <tr><th>模式</th><th>需要电脑吗</th><th>适合什么</th></tr>
+          <tr><td>云上模式</td><td>不需要</td><td>查资料、写文案、处理你上传的照片和文件</td></tr>
+          <tr><td>本机模式</td><td>需要，电脑保持运行</td><td>读写电脑里的文件、执行本地任务</td></tr>
+        </table>
+        <div class="tip">电脑关着也能用云上模式；但要用到电脑里的资料，就得开本机模式，并保证电脑上的 WorkBuddy 正在运行。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q23">
+      <summary><span class="qnum">Q23</span>手机上能访问手机里的资料吗？能像电脑一样操作文件吗？</summary>
+      <div class="answer">
+        <p>不能像电脑那样自由浏览手机文件夹。<b>只能把文件主动交给它</b>，它不能自己去翻。</p>
+        <p>点输入框旁边的「+」，有四个入口：</p>
+        <table>
+          <tr><th>入口</th><th>能做什么</th><th>限制</th></tr>
+          <tr><td>拍照</td><td>实时拍摄纸质文件、发票、白板</td><td>每次 1 张</td></tr>
+          <tr><td>照片 / 视频</td><td>从相册选择</td><td>一次最多 5 张</td></tr>
+          <tr><td>手机文件</td><td>选择 Excel、Word、PDF、TXT 等</td><td>需手动逐个选择</td></tr>
+          <tr><td>微信文件</td><td>从聊天记录里选文件</td><td>同上</td></tr>
+        </table>
+        <p>所以这些做不到：</p>
+        <ul>
+          <li>让它「把相册里所有截图整理一下」——它没法遍历相册</li>
+          <li>批量重命名、批量移动手机里的文件</li>
+          <li>读取通讯录、短信或其他 App 的数据</li>
+        </ul>
+        <div class="tip">处理手机里零散几张照片、几个文件完全够用；要批量整理一堆文件，建议先把文件传到电脑上处理。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s10">
+    <h2>十、企业微信集成</h2>
+
+    <details class="qa" id="q24">
+      <summary><span class="qnum">Q24</span>企业微信和 WorkBuddy 打通到什么程度？能做什么？</summary>
+      <div class="answer">
+        <p>分两个层次：</p>
+        <table>
+          <tr><th>层次</th><th>怎么用</th><th>能做什么</th></tr>
+          <tr><td>基础：企微助理</td><td>在企微里给机器人发指令</td><td>远程操控电脑上的 WorkBuddy：群里 @ 它派活、跟进进度、确认操作、接收任务通知</td></tr>
+          <tr><td>深度集成</td><td>用企微账号登录 WorkBuddy</td><td>在授权范围内读写企微里的消息、文档、表格、会议、邮件、日程、待办、微盘、通讯录</td></tr>
+        </table>
+        <p>深度集成后可以做的事：</p>
+        <ul>
+          <li>把群聊记录合并转发给它，自动读取里面引用的文档、微盘文件、日程、会议纪要，整理成需求文档或项目看板</li>
+          <li>一句话总结当天未读消息和未读邮件，按「需处理 / 值得关注 / 其他」分类，单独标出 @ 你的</li>
+          <li>会后读取会议纪要，提炼结论、分派待办</li>
+          <li>定时生成日报，自动推送到你的企微或团队群</li>
+          <li>代你发消息到内部单聊或群聊（发送前需要你本人确认）</li>
+        </ul>
+        <div class="tip">涉及员工会议内容、邮件读取的操作，需要员工本人授权；你看不到的文档、进不去的群，它同样访问不了。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q25">
+      <summary><span class="qnum">Q25</span>想用企业微信集成，需要满足什么条件？</summary>
+      <div class="answer">
+        <p>三件事同时满足：</p>
+        <ol>
+          <li><b>企业微信已认证</b>：个人注册、未认证的企业暂时用不了</li>
+          <li><b>版本到位</b>：WorkBuddy 5.8.0 及以上，企业微信 5.0.12 及以上</li>
+          <li><b>走 WorkBuddy 企业版</b>：个人版用不了这套企微能力</li>
+        </ol>
+        <p>入口：企业微信侧边栏会出现「WorkBuddy」图标，管理员可以在那里领取使用、分配账号。</p>
+        <div class="tip">官方提供限免体验名额，可以先试用再决定是否采购。试用有期限和额度，到期后需要正式开通才能继续使用。</div>
+        <div class="tip">企微认证不等于 WorkBuddy 企业版——这是两套独立的订阅，需要分别满足。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q26">
+      <summary><span class="qnum">Q26</span>用企业微信登录，是企业账号还是个人账号？积分怎么算？</summary>
+      <div class="answer">
+        <p>登录后是<b>企业版身份</b>，绑定你所在的企业微信组织架构，不是个人账号。</p>
+        <table>
+          <tr><th></th><th>个人版</th><th>企业版（企微登录）</th></tr>
+          <tr><td>账号归属</td><td>个人</td><td>企业</td></tr>
+          <tr><td>积分管理</td><td>自己购买、自己使用</td><td>企业统一采购和分配</td></tr>
+          <tr><td>用量查看</td><td>个人中心</td><td>管理后台按成员、部门查看</td></tr>
+        </table>
+        <div class="tip">个人版和企业版是两套独立的积分账本，不互通、不合并。</div>
+        <div class="tip">如果企业还没购买企业版，可以先用官方限免体验名额；试用到期后，个人版账号不会自动转成企业版，也不能继续使用企微集成能力。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s11">
+    <h2>十一、Outlook 邮件接入</h2>
+
+    <details class="qa" id="q27">
+      <summary><span class="qnum">Q27</span>Outlook 邮箱能接到 WorkBuddy 吗？个人邮箱行吗？</summary>
+      <div class="answer">
+        <p>能，通过<b>自定义 MCP 连接器</b>接入。个人 Outlook 邮箱就可以，不需要 Microsoft 365 订阅。</p>
+        <table>
+          <tr><th>账号类型</th><th>能不能接</th><th>需要什么</th></tr>
+          <tr><td>个人 Outlook / Hotmail</td><td>可以</td><td>自己完成授权即可</td></tr>
+          <tr><td>企业 / 学校 Microsoft 365</td><td>可以</td><td>通常需要企业 IT 配合授权</td></tr>
+        </table>
+        <p>接入前需要在微软 Azure 注册一个应用，拿到应用 ID，再在 WorkBuddy 里配置连接器。个人账号第一次注册时会自动创建一个免费目录，不产生费用。</p>
+        <div class="tip">配置完成后需要重启 WorkBuddy，并在连接器页面点「信任」才会生效。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q28">
+      <summary><span class="qnum">Q28</span>企业版 Outlook 接入，需要管理员权限吗？</summary>
+      <div class="answer">
+        <p>不一定，取决于企业 Microsoft 365 的租户设置：</p>
+        <table>
+          <tr><th>租户设置</th><th>谁来授权</th></tr>
+          <tr><td>允许用户自行同意第三方应用</td><td>员工本人授权即可</td></tr>
+          <tr><td>已关闭用户同意</td><td>必须由 IT 管理员做管理员同意</td></tr>
+        </table>
+        <p>多数企业出于合规考虑会关闭用户同意，所以实际推进时通常需要 IT 部门配合。推荐做法是由企业 IT 在自己的租户里注册应用，提供应用 ID 和租户 ID。</p>
+        <p>另外，会议室查询这类权限必须管理员同意，无法由个人授权。</p>
+        <div class="tip">接入使用的是「委托权限」：只能操作当前登录人本来就有权访问的邮件和日历，拿不到其他人的邮箱。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q29">
+      <summary><span class="qnum">Q29</span>Outlook 接上之后能做什么？能帮我给客户回邮件吗？</summary>
+      <div class="answer">
+        <p>可以。主要能力：</p>
+        <table>
+          <tr><th>类别</th><th>能做什么</th></tr>
+          <tr><td>读邮件</td><td>按发件人、主题、日期、关键词搜索，读全文和整条对话</td></tr>
+          <tr><td>写邮件</td><td>起草、回复、全部回复、转发、发送</td></tr>
+          <tr><td>处理邮件</td><td>批量标记、移动、分类、导出、下载附件</td></tr>
+          <tr><td>日历</td><td>查看、创建、修改、取消日程</td></tr>
+        </table>
+        <p>「帮客户回邮件」的流程是：找到邮件 → 读完整对话 → 生成回复草稿 → 你确认 → 发出。不会绕过你直接发。</p>
+        <p>需要注意两点：</p>
+        <ul>
+          <li><b>不能收到邮件就自动回</b>。它需要你发起任务，或者配定时任务定期检查；不是常驻监听的邮箱助手。</li>
+          <li><b>共享邮箱只能读，不能从共享邮箱发信或回复</b>。如果要用 support@ 这类共享邮箱统一回信，需要另行确认方案。</li>
+        </ul>
+        <div class="tip">建议先开启只读模式、设置收件人白名单和发信上限，确认稳定后再开放发送权限。</div>
       </div>
     </details>
   </section>
