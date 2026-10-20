@@ -216,7 +216,7 @@
   <div class="inner">
     <h1>WorkBuddy 常见问题答疑</h1>
     <p class="sub">从下载安装到后台管理，新客户最常问的问题都在这里</p>
-    <span class="badge" id="verBadge">v0.9.2 · 2026-10-20</span>
+    <span class="badge" id="verBadge">v0.10.0 · 2026-10-20</span>
   </div>
 </header>
 
@@ -248,6 +248,7 @@
     <a href="#s11">Outlook 接入</a>
     <a href="#s12">专家与技能</a>
     <a href="#s13">AI 准确性</a>
+    <a href="#s14">系统对接与数据安全</a>
   </nav>
 
   <div class="hot">
@@ -747,6 +748,99 @@
           ⑤ 长文档拆章节处理。
         </div>
         <div class="tip">涉及对外发布、财务决策、合同条款的内容，建议保留人工审核环节，不要直接采用 AI 输出。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s14">
+    <h2>十四、系统对接与数据安全</h2>
+
+    <details class="qa" id="q33">
+      <summary><span class="qnum">Q33</span>ERP 等外部系统能直接对接吗？要不要额外付费？</summary>
+      <div class="answer">
+        <p>能对接，前提是对方系统有可用的数据出口。常见有三种方式：</p>
+        <table>
+          <tr><th>方式</th><th>说明</th><th>费用</th></tr>
+          <tr><td>标准 API</td><td>系统自带开放接口，有文档和访问凭证</td><td>一般不需要额外购买</td></tr>
+          <tr><td>数据库只读账号</td><td>直接连数据库读取，需要 IT 开权限</td><td>不产生接口费</td></tr>
+          <tr><td>厂商定制开发</td><td>老系统没有标准接口，需要厂商单独开发</td><td>通常需要开发费</td></tr>
+        </table>
+        <p>WorkBuddy 通过 MCP（连接器协议）接入，配置本身不额外收费，正常消耗积分。</p>
+        <div class="tip">评估前先向对方 IT 确认三件事：有没有 API 文档、支不支持 Token 或 OAuth、有没有测试环境。这三项不具备，通常意味着要先做接口开发。</div>
+        <div class="tip">数据结构复杂时，建议先明确要取哪些字段、用什么口径，避免接完才发现数据对不上。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q34">
+      <summary><span class="qnum">Q34</span>把接口权限给 AI，会不会有改数据的风险？</summary>
+      <div class="answer">
+        <p>风险是真实存在的。关键不在 AI，而在<b>用哪个账号接入</b>。</p>
+        <table>
+          <tr><th>做法</th><th>说明</th></tr>
+          <tr><td>用只读账号</td><td>不要用总账、财务总监这类高权限账号</td></tr>
+          <tr><td>限制范围</td><td>数据库层限制 IP，只开放必要的表和视图</td></tr>
+          <tr><td>留审计日志</td><td>能追溯谁在什么时候取了什么数据</td></tr>
+          <tr><td>用默认权限</td><td>WorkBuddy 权限档位选「默认权限」，减少敏感操作自动执行</td></tr>
+        </table>
+        <div class="tip">涉及财务、人事等敏感系统时，建议由 IT 单独开一个接口账号，明确使用范围和有效期，不要共用个人账号。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q35">
+      <summary><span class="qnum">Q35</span>社保这类系统登录，要把账号密码交给它吗？</summary>
+      <div class="answer">
+        <p>不需要。这类网页系统通常通过<b>扫码登录</b>，不需要把账号密码交给 AI。</p>
+        <p>但仍要注意，扫码本身也是一次授权，建议：</p>
+        <ul>
+          <li>使用专用账号，不要用个人主账号</li>
+          <li>用完及时退出，不长期保持登录状态</li>
+          <li>不要把密码直接粘贴到对话里</li>
+        </ul>
+        <div class="tip">不同网站支持的登录方式不一样，实际以该系统的登录页面为准。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q36">
+      <summary><span class="qnum">Q36</span>个人版怎么保证数据安全？除了脱敏还要做什么？</summary>
+      <div class="answer">
+        <p>脱敏只解决一个环节，数据安全要分三层看：</p>
+        <table>
+          <tr><th>手段</th><th>防的是什么</th></tr>
+          <tr><td>使用本地工作空间</td><td>让数据留在你自己的电脑上，不离开本地环境</td></tr>
+          <tr><td>数据脱敏</td><td>避免敏感信息进入模型上下文</td></tr>
+          <tr><td>企业版 / 专享版 / 私有化</td><td>满足企业级的隔离、审计和合规要求</td></tr>
+        </table>
+        <p>官方对数据的说明是：数据在本地环境执行处理，服务端仅处理数据片段，用后即弃、不保存、不用于模型训练。</p>
+        <div class="tip">如果只是个人试用，至少做到两条：选本地工作空间 + 处理前脱敏。</div>
+        <div class="tip">如果涉及公司敏感数据，建议通过公司统一渠道申请企业版，不要用个人版处理。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q37">
+      <summary><span class="qnum">Q37</span>企业版管理员能看到同事的文件吗？同事之间能互相看到吗？</summary>
+      <div class="answer">
+        <table>
+          <tr><th>对象</th><th>能不能看到</th></tr>
+          <tr><td>同事之间</td><td>不能，各自只能看到自己的对话和文件</td></tr>
+          <tr><td>公共空间</td><td>可以，放进公共空间的成果是团队共享的</td></tr>
+          <tr><td>管理员</td><td>可见范围取决于企业后台的配置和权限设置</td></tr>
+        </table>
+        <p>如果企业对可见性有明确要求，建议在管理办法里写清楚：谁能查、什么情况下查、查到什么程度。</p>
+        <div class="tip">具体的管理员权限以实际后台版本和企业的权限配置为准。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q38">
+      <summary><span class="qnum">Q38</span>手机端鸿蒙打不开、电脑和手机不同步怎么办？</summary>
+      <div class="answer">
+        <p>两个问题分开看：</p>
+        <table>
+          <tr><th>现象</th><th>处理方式</th></tr>
+          <tr><td>鸿蒙 6 扫码打不开</td><td>已知兼容问题，可先用安卓手机完成首次扫码连接，再切回鸿蒙使用</td></tr>
+          <tr><td>鸿蒙 4</td><td>可以正常连接</td></tr>
+          <tr><td>电脑和手机不同步</td><td>确认两端登录同一账号；检查电脑端是否在线、是否开启了允许移动端连接</td></tr>
+        </table>
+        <div class="tip">手机端连接电脑后，任务仍然在电脑上执行；电脑关机或客户端退出，手机端就无法继续操作。</div>
       </div>
     </details>
   </section>
