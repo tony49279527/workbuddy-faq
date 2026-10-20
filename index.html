@@ -216,7 +216,7 @@
   <div class="inner">
     <h1>WorkBuddy 常见问题答疑</h1>
     <p class="sub">从下载安装到后台管理，新客户最常问的问题都在这里</p>
-    <span class="badge" id="verBadge">v0.9.0 · 2026-10-20</span>
+    <span class="badge" id="verBadge">v0.9.1 · 2026-10-20</span>
   </div>
 </header>
 
@@ -246,6 +246,7 @@
     <a href="#s9">手机与移动端</a>
     <a href="#s10">企业微信集成</a>
     <a href="#s11">Outlook 接入</a>
+    <a href="#s12">专家与技能</a>
   </nav>
 
   <div class="hot">
@@ -678,6 +679,41 @@
           <li><b>共享邮箱只能读，不能从共享邮箱发信或回复</b>。如果要用 support@ 这类共享邮箱统一回信，需要另行确认方案。</li>
         </ul>
         <div class="tip">建议先开启只读模式、设置收件人白名单和发信上限，确认稳定后再开放发送权限。</div>
+      </div>
+    </details>
+  </section>
+
+  <section id="s12">
+    <h2>十二、专家与技能</h2>
+
+    <details class="qa" id="q30">
+      <summary><span class="qnum">Q30</span>专家和专家团是什么？它们自带知识吗？知识会更新吗？</summary>
+      <div class="answer">
+        <p>专家是<b>「角色切换」</b>机制：用「人设 + 方法论 + 工具链」，让 WorkBuddy 以某个领域的专家身份来完成任务。专家团则是<b>「协作执行」</b>机制：由团长拆解任务、分派给多位专家并行执行，最后整合交付。</p>
+        <p><b>专家本身不是知识库。</b>官方说明：专家不主动获取系统权限，只处理你主动提供的对话和上传文件；只有配备了 Skill 或 MCP，才会在你授权下间接访问外部服务。</p>
+        <p>它的「知识」实际来自三层：</p>
+        <table>
+          <tr><th>来源</th><th>会不会更新</th><th>说明</th></tr>
+          <tr><td>底层大模型</td><td>随模型版本</td><td>训练数据有截止日期，不联网就不知道之后的信息</td></tr>
+          <tr><td>你提供的材料</td><td>每次对话</td><td>上传的文件、粘贴的内容、对话上下文</td></tr>
+          <tr><td>挂载的 Skill / MCP / 知识库</td><td>取决于外部系统</td><td>联网检索、乐享 / ima 知识库、企业系统</td></tr>
+        </table>
+        <p>所以「专家知识更新」要分两件事看：专家包本身有<b>版本迭代</b>（方法论、提示词会更新），但这不是知识库；真正决定它知不知道最新信息的，是模型版本、有没有联网、以及你给了什么资料。</p>
+        <div class="tip">专家团会调用多位专家协同，积分消耗通常是单个专家的数倍，使用前请确认积分充足。</div>
+        <div class="tip">想让专家掌握企业自己的知识，可以接入乐享 / ima / 腾讯文档知识库，或者用「我的专家」把企业的 SOP、话术沉淀进去。</div>
+      </div>
+    </details>
+
+    <details class="qa" id="q31">
+      <summary><span class="qnum">Q31</span>Skill、专家、专家团有什么区别？该怎么选？</summary>
+      <div class="answer">
+        <table>
+          <tr><th>类型</th><th>本质</th><th>什么时候用</th></tr>
+          <tr><td>Skill</td><td>工具能力：让 AI 能做某件事</td><td>需要 AI 具备某种能力，比如生成 PPT、处理 Excel、联网检索</td></tr>
+          <tr><td>专家</td><td>能力 + 经验：懂某个领域的 AI 角色</td><td>有一个明确的单点问题，需要专业视角和方法</td></tr>
+          <tr><td>专家团</td><td>多位专家 + 协作流程</td><td>任务复杂，需要多个角色配合完成</td></tr>
+        </table>
+        <div class="tip">简单记：Skill 是「能力」，专家是「能力 + 经验」，专家团是「多位专家 + 协作流程」。</div>
       </div>
     </details>
   </section>
