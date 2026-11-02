@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>席位用不上能退吗｜WorkBuddy 企业版席位缩减说明</title>
+<meta name="description" content="WorkBuddy 企业版席位支持订阅期内随时缩减：当前月按剩余天数折算、后续完整月全额退还，管理员在企业控制台自助完成三步操作。">
+<meta name="theme-color" content="#2563eb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="席位用不上能退吗｜WorkBuddy 企业版席位缩减说明">
+<meta property="og:description" content="用不上的席位随时缩减，剩余整月费用全额退还，不用等到期，也不用走退款流程。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M9 12h14M9 16h9M9 20h5' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --card:#ffffff;
+    --text:#1f2328;
+    --muted:#656d76;
+    --line:#e4e7eb;
+    --brand:#2563eb;
+    --brand-soft:#eff4ff;
+    --ok:#15803d;
+    --ok-soft:#f0fdf4;
+    --ok-line:#bbf7d0;
+    --warn:#b45309;
+    --warn-bg:#fffbeb;
+    --warn-line:#f59e0b;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 20px 80px;}
+
+  header{
+    background:linear-gradient(160deg,#1e3a8a 0%,#2563eb 100%);
+    color:#fff;
+    padding:44px 20px 92px;
+    margin-bottom:-64px;
+  }
+  header .inner{max-width:840px;margin:0 auto;}
+  header .back{
+    display:inline-block;margin-bottom:16px;color:#fff;text-decoration:none;
+    font-size:13px;opacity:.82;border-bottom:1px solid rgba(255,255,255,.35);
+    padding-bottom:1px;
+  }
+  header .back:hover{opacity:1;}
+  header h1{margin:0 0 8px;font-size:27px;letter-spacing:.4px;font-weight:650;line-height:1.4;}
+  header .sub{margin:0;opacity:.88;font-size:14.5px;}
+  .badge{
+    display:inline-block;margin-top:14px;padding:4px 11px;
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;font-size:12.5px;
+  }
+
+  .lead{
+    background:var(--card);
+    border:1px solid var(--ok-line);
+    border-left:4px solid var(--ok);
+    border-radius:14px;
+    padding:20px 22px;
+    box-shadow:0 6px 24px rgba(16,24,40,.07);
+    position:relative;z-index:2;
+  }
+  .lead .tag{
+    display:inline-block;background:var(--ok-soft);color:var(--ok);
+    font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:10px;
+  }
+  .lead h2{margin:0 0 8px;font-size:18px;line-height:1.5;}
+  .lead p{margin:0;color:#2f3439;font-size:15px;}
+  .lead p + p{margin-top:8px;}
+
+  section{margin-top:34px;}
+  section h2{
+    font-size:17px;margin:0 0 14px;padding-left:11px;
+    border-left:3px solid var(--brand);line-height:1.3;
+  }
+
+  .card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:18px;
+  }
+
+  table{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:14.5px;}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  th{background:#fafbfc;font-weight:600;color:var(--muted);font-size:13.5px;white-space:nowrap;}
+  tbody tr:last-child td{border-bottom:1px solid var(--line);}
+  td:first-child{font-weight:600;white-space:nowrap;}
+  .money{color:var(--ok);font-weight:700;white-space:nowrap;}
+  tr.sum td{background:var(--ok-soft);}
+  tr.sum td:first-child{color:var(--ok);}
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .tbl-scroll table{min-width:460px;}
+
+  .steps{display:grid;gap:11px;}
+  .step{
+    display:flex;gap:13px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;
+  }
+  .step .n{
+    flex:0 0 auto;width:24px;height:24px;border-radius:50%;
+    background:var(--brand);color:#fff;font-size:13px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;margin-top:3px;
+  }
+  .step .body{font-size:15px;color:#2f3439;}
+  .step .body b{color:var(--text);}
+  .step .note{display:block;margin-top:4px;color:var(--muted);font-size:13.5px;}
+
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    background:var(--brand-soft);color:#1e40af;
+    padding:1px 6px;border-radius:5px;font-size:13.5px;
+  }
+
+  .tips{display:grid;gap:11px;}
+  .tip-item{
+    background:var(--warn-bg);border-left:3px solid var(--warn-line);
+    padding:12px 15px;border-radius:0 8px 8px 0;
+  }
+  .tip-item .t{font-weight:600;font-size:14.5px;color:var(--warn);margin-bottom:3px;}
+  .tip-item .d{font-size:14.5px;color:#5f431f;}
+
+  .tip{
+    background:var(--brand-soft);border-left:3px solid var(--brand);
+    padding:10px 13px;border-radius:0 8px 8px 0;margin:0 0 10px;font-size:14.5px;
+  }
+
+  details.qa{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:12px;margin-bottom:11px;overflow:hidden;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  details.qa[open]{border-color:#c7d7fe;box-shadow:0 3px 14px rgba(37,99,235,.08);}
+  details.qa summary{
+    cursor:pointer;list-style:none;padding:15px 46px 15px 18px;
+    font-weight:600;font-size:15.5px;position:relative;
+  }
+  details.qa summary::-webkit-details-marker{display:none;}
+  details.qa summary::after{
+    content:"";position:absolute;right:19px;top:50%;
+    width:8px;height:8px;margin-top:-5px;
+    border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+    transform:rotate(45deg);transition:transform .2s;
+  }
+  details.qa[open] summary::after{transform:rotate(-135deg);margin-top:-2px;}
+  .answer{padding:0 18px 16px;font-size:15px;color:#2f3439;}
+  .answer p{margin:0 0 8px;}
+  .answer p:last-child{margin-bottom:0;}
+  .answer a{color:var(--brand);}
+
+  footer{
+    margin-top:46px;padding-top:20px;border-top:1px solid var(--line);
+    text-align:center;color:var(--muted);font-size:13px;line-height:1.9;
+  }
+  footer .src{
+    display:inline-block;text-align:left;background:var(--card);
+    border:1px solid var(--line);border-radius:10px;
+    padding:13px 18px;margin-bottom:14px;font-size:12.5px;
+  }
+  footer .src b{color:var(--muted);}
+
+  @media (max-width:600px){
+    header{padding:34px 18px 86px;}
+    header h1{font-size:22px;}
+    .wrap{padding:0 14px 60px;}
+    section h2{font-size:16px;}
+    td,th{padding:8px 9px;font-size:13.5px;}
+    details.qa summary{padding:14px 40px 14px 15px;font-size:15px;}
+    .answer{padding:0 15px 15px;}
+  }
+  @media print{
+    header{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    details.qa{break-inside:avoid;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <a class="back" href="../">← 返回常见问题</a>
+    <h1>席位用不上，可以中途缩减吗？</h1>
+    <p class="sub">买了 5 个席位用不完怎么办 —— 规则、算法、操作路径，一篇说清</p>
+    <span class="badge">依据腾讯云官方文档 · 2026-11</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lead">
+    <span class="tag">结论先说</span>
+    <h2>可以随时缩减，剩余整月全额退，当月按剩余天数折算</h2>
+    <p>WorkBuddy 企业版支持在<b>订阅有效期内自助减少席位</b>，提交后<b>立即生效</b>，费用按规则退还。</p>
+    <p>这不是「退款」，是<b>「席位缩容」</b>——两者是两条独立的路径，缩容门槛低得多，也不受「购买后几天内」的时间限制。</p>
+  </div>
+
+  <section>
+    <h2>一、先分清两件事</h2>
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>对比项</th><th>席位缩容（推荐）</th><th>订单退款</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>适用场景</td><td>部分席位用不上，要减少人数</td><td>整个订单不想要了</td></tr>
+          <tr><td>时间限制</td><td>订阅期内<b>随时</b>可办</td><td>仅购买后 <b>5 天内</b>，每主体限首次</td></tr>
+          <tr><td>能否退钱</td><td>能。未开始的整月<b>全额退</b>，当月按天折算</td><td>能，但超期不受理</td></tr>
+          <tr><td>操作方</td><td>企业管理员在控制台自助完成</td><td>需提交工单，人工审核</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>二、用了 3 个月想减 2 个席位，钱怎么退</h2>
+    <p style="font-size:15px;color:var(--muted);margin:0 0 12px;">
+      以 <b>5 席 × 1 年、已用 3 个月、缩减 2 席</b> 为例，退费由两部分相加：
+    </p>
+    <div class="tbl-scroll">
+      <table>
+        <thead>
+          <tr><th>退费构成</th><th>计算规则</th><th>示意金额</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>当前这个月</td>
+            <td>按当月剩余天数折算，不使用不退、不额外扣</td>
+            <td class="money">约 369 元</td>
+          </tr>
+          <tr>
+            <td>后续每个完整月</td>
+            <td>尚未开始的完整周期，减少席位的费用<b>全额退还</b></td>
+            <td class="money">3,168 元</td>
+          </tr>
+          <tr class="sum">
+            <td>合计</td>
+            <td>两部分自动相加，原路退回付款账户</td>
+            <td class="money">约 3,500 元</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin:12px 0 0;line-height:1.8;">
+      上表示意按刊例价 198 元/人/月、剩余 8 个完整月 + 当月剩 28 天测算，仅供理解规则。
+      <b>实际金额以控制台缩容页面显示的「预计退费」为准</b>，确认前即可看到。
+    </p>
+  </section>
+
+  <section>
+    <h2>三、三步操作，管理员自己就能办</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <b>先腾出席位。</b>进入企业控制台 → 成员管理，把不再使用的成员移除（移除立即生效，不影响组织架构通讯录数据，重新分配后可继续使用）。
+          <span class="note">原因：缩容后的席位数不能低于当前已分配的人数。</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <b>发起缩容。</b><code>订阅与用量</code> → <code>订阅管理</code> → 席位管理卡片右下角 <code>变配席位</code> → 在变配页签把方向切换为 <b>缩容</b> → 填写本次要减少的席位数量。
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <b>核对金额，确认提交。</b>页面底部结算栏会显示「<b>预计退费</b>」明细，核对无误后点确认。提交后立即生效，退费记录可在 <code>账单 / 退款记录</code> 中查询。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>四、五件事务必先知道</h2>
+    <div class="tips">
+      <div class="tip-item">
+        <div class="t">1 · 不能缩到 0 席</div>
+        <div class="d">旗舰版起售下限是 1 席。5 席全部都不用了，最多缩到 1 席，最后这 1 席需等到期不续费。彻底停用的做法是「缩到 1 席 + 关闭自动续费」。</div>
+      </div>
+      <div class="tip-item">
+        <div class="t">2 · 已经用掉的积分不退</div>
+        <div class="d">积分按席位每月发放，已消耗部分不返还；剩余额度会按新席位数重新折算。这是缩容与整单退款的本质区别。</div>
+      </div>
+      <div class="tip-item">
+        <div class="t">3 · 缩容不可撤销</div>
+        <div class="d">缩容后想加回来，需要重新发起扩容，按当时价格重新购买。建议按实际在岗人数确认清楚再操作，不要「先缩了再说」。</div>
+      </div>
+      <div class="tip-item">
+        <div class="t">4 · 续费时改不了数量</div>
+        <div class="d">续费页面的许可证数量是固定的。如果希望下一年少买，必须<b>先缩容、再续费</b>，顺序反了就要多等一整年。</div>
+      </div>
+      <div class="tip-item">
+        <div class="t">5 · 越早缩，退得越多</div>
+        <div class="d">当月部分按剩余天数折算，后续整月全额退。同样减 2 席，在周期初办理比在周期末办理能多退一个月的钱。</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>五、常见追问</h2>
+
+    <details class="qa">
+      <summary>缩减席位后，员工之前的数据会丢吗？</summary>
+      <div class="answer">
+        <p>不会。释放席位只回收「使用资格」，不影响组织架构和通讯录数据。该成员暂时无法使用高级能力，若后续重新分配席位，可继续正常使用。</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>能不能先停一段时间，过几个月再加回来？</summary>
+      <div class="answer">
+        <p>可以理解为「缩容 + 日后扩容」两步。但扩容按重新下单的价格计算，不保证与原购买价一致，请以届时页面报价为准。</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>退的钱退到哪里？多久到账？</summary>
+      <div class="answer">
+        <p>原路退回付款账户，到账时间以支付渠道为准。可在企业控制台的「账单 / 退款记录」查看退款明细。</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>按年一次付清，也能这样退吗？</summary>
+      <div class="answer">
+        <p>可以。年付订单同样按「当前周期折算 + 后续完整周期全额退」的规则处理，剩余时长超过一个计费周期即按多周期分别计算。</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>谁有权限操作缩容？</summary>
+      <div class="answer">
+        <p>企业管理员。需使用购买该产品的腾讯云账号登录企业控制台，并具备席位管理相关权限点。</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>如果只是人员变动，需要缩容吗？</summary>
+      <div class="answer">
+        <p>不需要。只是换人就把席位释放出来、重新分配给新同事即可，席位总数不变，不涉及费用。</p>
+        <div class="tip">只有当「确实用不了这么多席位」时才需要缩容；纯粹的人员流动走席位释放与再分配。</div>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    <div class="src">
+      <b>口径来源</b><br>
+      腾讯云官方文档《WorkBuddy Enterprise 变配说明》《续费说明》《席位管理》，更新于 2026 年 10 月。<br>
+      具体规则如有调整，以腾讯云官方文档及控制台实际页面为准。
+    </div>
+    <div>
+      对接人：<b>梁喜乐</b> · 电话 / 微信 13572927148<br>
+      本页仅作说明参考，不构成合同承诺
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
