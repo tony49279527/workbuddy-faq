@@ -2,208 +2,163 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WorkBuddy 资料目录 · 常见问题 · 席位 · 数据安全 · 管理后台</title>
-<meta name="description" content="WorkBuddy 采购与使用资料汇总：常见问题答疑、席位缩减与费用、数据安全说明、企业管理后台能力，每一项结论都标注腾讯官方文档出处。">
-<meta name="theme-color" content="#2563eb">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkBuddy 资料目录 · 常见问题 · 席位 · 数据安全 · 企业管理</title>
+<meta name="description" content="WorkBuddy 采购与使用资料总目录：常见问题答疑、席位缩减与费用、数据安全说明、企业管理后台能力，每一项结论都标注腾讯官方文档出处，可逐条核对。">
+<meta name="theme-color" content="#1f6feb">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WorkBuddy 资料目录">
 <meta property="og:description" content="常见问题、席位与费用、数据安全说明、企业管理后台 —— 结论均标注腾讯官方文档出处，可逐条核对。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M9 12h14M9 16h9M9 20h5' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
   :root{
-    --bg:#f6f7f9;
-    --card:#ffffff;
-    --text:#1f2328;
-    --muted:#656d76;
-    --line:#e4e7eb;
-    --brand:#2563eb;
-    --brand-soft:#eff4ff;
+    --ink:#16202b; --ink-2:#47525f; --ink-3:#7c8794;
+    --line:#e5e9ee; --bg:#f5f6f8; --card:#fff;
+    --blue:#1f6feb; --blue-d:#0f3d6e;
   }
   *{box-sizing:border-box;}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
-    font-size:16px;
-    line-height:1.75;
-    -webkit-font-smoothing:antialiased;
+    margin:0;padding:56px 20px 80px;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:840px;margin:0 auto;padding:0 20px 72px;}
-
+  .wrap{max-width:880px;margin:0 auto;}
   header{
-    background:linear-gradient(160deg,#1e3a8a 0%,#2563eb 100%);
-    color:#fff;
-    padding:48px 20px 96px;
-    margin-bottom:-64px;
+    background:linear-gradient(135deg,#0f3d6e 0%,#1f6feb 62%,#2e8ef0 100%);
+    color:#fff;padding:38px 40px;border-radius:18px;margin-bottom:26px;
+    box-shadow:0 10px 30px rgba(15,61,110,.20);
   }
-  header .inner{max-width:840px;margin:0 auto;}
-  header h1{margin:0 0 10px;font-size:29px;letter-spacing:.5px;font-weight:650;line-height:1.35;}
-  header .sub{margin:0;opacity:.9;font-size:14.5px;max-width:600px;}
-  .badge{
-    display:inline-block;margin-top:16px;padding:4px 11px;
-    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);
-    border-radius:999px;font-size:12.5px;
-  }
+  header h1{margin:0 0 10px;font-size:27px;letter-spacing:.5px;}
+  header .sub{opacity:.93;font-size:14.5px;max-width:640px;}
+  header .meta{margin-top:16px;font-size:12.5px;opacity:.85;}
 
-  .grid{display:grid;gap:14px;position:relative;z-index:2;}
+  .grid{display:grid;gap:16px;}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr;}}
+  a.doc{
+    display:block;text-decoration:none;color:inherit;background:var(--card);
+    border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:14px;
+    padding:22px 24px;box-shadow:0 2px 12px rgba(20,30,50,.045);transition:.18s;
+  }
+  a.doc:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,30,50,.10);border-left-color:#0f3d6e;}
+  a.doc .idx{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--blue);opacity:.8;}
+  a.doc h2{margin:6px 0 10px;font-size:18px;line-height:1.45;}
+  a.doc p{margin:0;font-size:13.5px;color:var(--ink-2);}
+  a.doc ul{margin:12px 0 0;padding-left:18px;font-size:13px;color:var(--ink-3);}
+  a.doc li{margin:3px 0;}
+  a.doc .go{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--blue);}
 
-  a.card{
-    display:block;text-decoration:none;color:inherit;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:20px 22px;
-    box-shadow:0 6px 24px rgba(16,24,40,.06);
-    transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-    position:relative;
-  }
-  a.card:hover{
-    transform:translateY(-2px);
-    border-color:#bfd3fd;
-    box-shadow:0 12px 30px rgba(37,99,235,.13);
-  }
-  .card .top{display:flex;align-items:center;gap:11px;margin-bottom:9px;}
-  .card .no{
-    flex:0 0 auto;width:30px;height:30px;border-radius:9px;
-    background:var(--brand-soft);color:var(--brand);
-    font-size:13.5px;font-weight:700;
-    display:flex;align-items:center;justify-content:center;
-    font-variant-numeric:tabular-nums;
-  }
-  .card h2{margin:0;font-size:18px;font-weight:650;letter-spacing:.2px;}
-  .card .desc{margin:0 0 12px;color:var(--muted);font-size:14.5px;line-height:1.7;}
-  .card .go{
-    color:var(--brand);font-size:14px;font-weight:600;
-    display:inline-flex;align-items:center;gap:5px;
-  }
-  .card:hover .go{gap:9px;}
-  .card .go span{transition:transform .16s ease;}
-
-  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;}
-  .tags i{
-    font-style:normal;font-size:12px;color:#3f4750;
-    background:#f2f4f7;border:1px solid #e8ebef;
-    padding:2px 8px;border-radius:6px;
-  }
-  .flag{
-    font-style:normal;font-size:11.5px;font-weight:600;
-    color:#b45309;background:#fffbeb;border:1px solid #fde68a;
-    padding:1px 7px;border-radius:5px;margin-left:auto;
+  .tag{
+    display:inline-block;font-size:11.5px;font-weight:600;color:#b45309;
+    background:#fffbeb;border:1px solid #fde68a;border-radius:5px;
+    padding:0 6px;margin-left:8px;vertical-align:2px;letter-spacing:0;
   }
 
   .note{
-    margin:22px 0 0;text-align:center;color:var(--muted);font-size:13px;
+    margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 24px;font-size:13px;color:var(--ink-3);box-shadow:0 2px 12px rgba(20,30,50,.045);
   }
-  .note a{color:var(--brand);text-decoration:none;}
+  .note b{color:var(--ink-2);}
+  .note a{color:var(--blue);text-decoration:none;word-break:break-all;}
   .note a:hover{text-decoration:underline;}
+  .note .contact{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);}
+  footer{margin-top:34px;text-align:center;font-size:12px;color:var(--ink-3);}
 
-  footer{
-    margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
-    text-align:center;color:var(--muted);font-size:13px;line-height:1.9;
-  }
-  footer .src{
-    display:inline-block;text-align:left;background:var(--card);
-    border:1px solid var(--line);border-radius:10px;
-    padding:13px 18px;margin-bottom:14px;font-size:12.5px;
-  }
-  footer .src b{color:var(--muted);}
-
-  @media (max-width:600px){
-    header{padding:34px 18px 88px;}
-    header h1{font-size:23px;}
-    .wrap{padding:0 14px 56px;}
-    a.card{padding:17px 17px;}
-    .card h2{font-size:16.5px;}
+  @media(max-width:600px){
+    body{padding:28px 14px 56px;}
+    header{padding:28px 22px;}
+    header h1{font-size:22px;}
+    a.doc{padding:18px 18px;}
   }
   @media print{
-    header{background:#1e3a8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-    a.card{break-inside:avoid;box-shadow:none;}
-    body{background:#fff;}
+    body{background:#fff;padding:0;}
+    header{box-shadow:none;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    a.doc, .note{break-inside:avoid;box-shadow:none;}
   }
 </style>
 </head>
 <body>
-
-<header>
-  <div class="inner">
-    <h1>WorkBuddy 采购与使用 · 资料目录</h1>
-    <p class="sub">从常见问题到席位费用、数据安全、管理后台 —— 每一项结论都标注腾讯官方文档出处，可逐条核对。</p>
-    <span class="badge">整理日期：2026-11-02 ｜ 官方表述以腾讯最新文档为准</span>
-  </div>
-</header>
-
 <div class="wrap">
+
+  <header>
+    <h1>WorkBuddy 资料目录</h1>
+    <div class="sub">常见问题、席位与费用、数据安全、企业管理后台 —— 每一项结论都标注腾讯官方文档出处，可逐条核对。点开卡片查看对应专题。</div>
+    <div class="meta">整理日期：2026-11-02 ｜ 官方表述以腾讯最新文档为准</div>
+  </header>
 
   <div class="grid">
 
-    <a class="card" href="faq/">
-      <div class="top">
-        <span class="no">01</span>
-        <h2>WorkBuddy 常见问题答疑</h2>
-        <span class="flag">Q1–Q40</span>
-      </div>
-      <p class="desc">从下载安装到后台管理，新客户最常问的问题都在这里，共 15 个章节、40 问，支持关键词搜索。</p>
-      <div class="tags">
-        <i>账号与登录</i><i>模型与效果</i><i>积分额度</i><i>客户端</i><i>专家与技能</i><i>价格与采购</i><i>席位与费用</i><i>数据安全</i>
-      </div>
-      <span class="go">打开阅读 <span>→</span></span>
+    <a class="doc" href="faq/">
+      <div class="idx">01</div>
+      <h2>WorkBuddy 常见问题答疑</h2>
+      <p>从下载安装到后台管理，新客户最常问的问题都在这里，共 15 个章节、40 问，支持关键词搜索。</p>
+      <ul>
+        <li>账号、登录与订阅</li>
+        <li>模型选择与效果调优</li>
+        <li>积分、额度与加量包</li>
+        <li>客户端与本地文件处理</li>
+        <li>专家、技能与资料库</li>
+        <li>价格、采购与席位</li>
+        <li>系统对接与数据安全</li>
+      </ul>
+      <span class="go">打开阅读 →</span>
     </a>
 
-    <a class="card" href="seat-shrink/">
-      <div class="top">
-        <span class="no">02</span>
-        <h2>席位用不上，可以中途缩减吗</h2>
-        <span class="flag">高频</span>
-      </div>
-      <p class="desc">买了几个席位结果同事用不上怎么办：缩容规则、退费算法（含 5 席用 3 个月的实例）、三步操作路径，以及 5 个必须先知道的前提。</p>
-      <div class="tags">
-        <i>席位缩容</i><i>退费规则</i><i>续费减配</i><i>起售下限</i>
-      </div>
-      <span class="go">打开阅读 <span>→</span></span>
+    <a class="doc" href="seat-shrink/">
+      <div class="idx">02</div>
+      <h2>席位用不上，可以中途缩减吗<span class="tag">高频</span></h2>
+      <p>买了几个席位结果同事用不上怎么办 —— 缩容规则、退费算法与操作路径。</p>
+      <ul>
+        <li>席位缩容与订单退款的本质区别</li>
+        <li>退费算法：当月按天折算 + 后续整月全退</li>
+        <li>5 席用 3 个月、减 2 席的实例测算</li>
+        <li>三步操作路径（管理员控制台自助）</li>
+        <li>不能缩到 0 席、积分不退等 5 个前提</li>
+        <li>续费时如何少买席位</li>
+      </ul>
+      <span class="go">打开阅读 →</span>
     </a>
 
-    <a class="card" href="data-security/WorkBuddy数据安全说明.html">
-      <div class="top">
-        <span class="no">03</span>
-        <h2>WorkBuddy 数据安全说明</h2>
-      </div>
-      <p class="desc">数据会不会被用于模型训练、文件本体到底去了哪里、四层隔离体系与三档部署模式、安全中心能力清单与合规认证。</p>
-      <div class="tags">
-        <i>模型训练</i><i>数据流向</i><i>隔离体系</i><i>合规认证</i>
-      </div>
-      <span class="go">打开阅读 <span>→</span></span>
+    <a class="doc" href="data-security/WorkBuddy数据安全说明.html">
+      <div class="idx">03</div>
+      <h2>WorkBuddy 数据安全说明</h2>
+      <p>回答最关心的那个问题，并给出完整的隔离体系与管控能力全貌。</p>
+      <ul>
+        <li>数据会不会被用于训练（四处官方原文）</li>
+        <li>数据流向图：文件本体不出电脑</li>
+        <li>四层隔离体系 + 三档部署模式</li>
+        <li>客户端「安全中心」能力清单</li>
+        <li>合规认证与官方文档链接清单</li>
+      </ul>
+      <span class="go">打开阅读 →</span>
     </a>
 
-    <a class="card" href="data-security/企业管理后台能做什么.html">
-      <div class="top">
-        <span class="no">04</span>
-        <h2>企业管理后台能做什么</h2>
-      </div>
-      <p class="desc">12 个分区、37 个功能页逐一拆解：账号权限体系、IP 白名单、分享协作、日志留痕、资源治理与成本控制。</p>
-      <div class="tags">
-        <i>权限体系</i><i>IP 白名单</i><i>日志留痕</i><i>成本管控</i>
-      </div>
-      <span class="go">打开阅读 <span>→</span></span>
+    <a class="doc" href="data-security/企业管理后台能做什么.html">
+      <div class="idx">04</div>
+      <h2>企业管理后台能做什么</h2>
+      <p>企业版管理后台的安全管控能力全览，逐页梳理 12 个分区、37 个功能页。</p>
+      <ul>
+        <li>后台全貌与账号权限体系</li>
+        <li>安全中心：唯一能落到成员本机行为的管控</li>
+        <li>IP 白名单 / 分享与协作 / 日志留痕</li>
+        <li>资源治理与用量成本控制</li>
+        <li>财务部门落地配置清单（按优先级）</li>
+      </ul>
+      <span class="go">打开阅读 →</span>
     </a>
 
   </div>
 
-  <p class="note">
-    数据安全与管理后台两篇也收录在 <a href="data-security/">《数据安全资料目录》</a> 中
-  </p>
+  <div class="note">
+    <b>关于本文档的依据：</b>所有结论均来自腾讯官方文档、官网 FAQ、服务协议与隐私保护指引，以及企业版管理后台的实际页面。
+    最核心的官方依据页是
+    <a href="https://cloud.tencent.com/document/faq/1831/134405" target="_blank">cloud.tencent.com/document/faq/1831/134405</a>
+    （数据安全说明 / 三层纵深防御 / VPC 专享版 / 合规资质）。
+    <div class="contact">
+      对接人：<b>梁喜乐</b> · 电话 / 微信 13572927148
+    </div>
+  </div>
 
   <footer>
-    <div class="src">
-      <b>关于本文档的依据</b><br>
-      结论来源：腾讯云官方文档、WorkBuddy 官网 FAQ、服务协议与隐私保护指引、企业后台实际页面。<br>
-      核心依据页：cloud.tencent.com/document/faq/1831/134405
-    </div>
-    <div>
-      对接人：<b>梁喜乐</b> · 电话 / 微信 13572927148<br>
-      官方表述以腾讯最新文档为准 · 本文档仅作参考，不构成合同承诺
-    </div>
+    官方表述以腾讯最新文档为准 ｜ 本文档仅作参考，不构成合同承诺
   </footer>
 
 </div>
