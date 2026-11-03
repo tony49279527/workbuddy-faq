@@ -259,11 +259,11 @@
   <div class="hot">
     <div class="hot-title">🔥 客户问得最多的几个，点一下直接看</div>
     <div class="hot-list">
-      <button data-go="q16"><span class="n">Q16</span>管理后台在哪里</button>
-      <button data-go="q10"><span class="n">Q10</span>为什么要先关联</button>
-      <button data-go="q13"><span class="n">Q13</span>怎么分配给同事</button>
-      <button data-go="q15"><span class="n">Q15</span>价格与开票</button>
-      <button data-go="q21"><span class="n">Q21</span>怎么找你们</button>
+      <button data-go="q17"><span class="n">Q17</span>管理后台在哪里</button>
+      <button data-go="q11"><span class="n">Q11</span>为什么要先关联</button>
+      <button data-go="q14"><span class="n">Q14</span>怎么分配给同事</button>
+      <button data-go="q16"><span class="n">Q16</span>价格与开票</button>
+      <button data-go="q22"><span class="n">Q22</span>怎么找你们</button>
     </div>
   </div>
 
@@ -275,14 +275,35 @@
     <details class="qa">
       <summary><span class="qnum">Q1</span>Mac 和 Windows 电脑都能装客户端吗？</summary>
       <div class="answer">
-        <p>可以。Mac 和 Windows 都支持，下载安装方式一致，到官网下载对应版本安装即可。</p>
-        <p>官网：<a href="https://www.workbuddy.cn/" target="_blank" rel="noopener">https://www.workbuddy.cn/</a></p>
-        <p class="pending"><b>待补充：</b>支持的 macOS / Windows 最低系统版本要求</p>
+        <p>可以。Mac 和 Windows 都支持，到官网下载对应版本安装即可。</p>
+        <p>官网 <a href="https://www.workbuddy.cn/" target="_blank" rel="noopener">https://www.workbuddy.cn/</a> 点「立即下载」会自动匹配当前设备；也可以按芯片手动选：</p>
+        <table>
+          <tr><th>你的设备</th><th>下载哪个版本</th></tr>
+          <tr><td>Windows（Intel / AMD 处理器）</td><td>Windows x64（兼容 ARM64）</td></tr>
+          <tr><td>Mac · M 系列芯片（M1 及以后）</td><td>Mac ARM64 版本</td></tr>
+          <tr><td>Mac · Intel 芯片</td><td>Mac x64 版本</td></tr>
+        </table>
+        <div class="tip">不确定自己是哪种芯片：Mac 点左上角苹果图标 →「关于本机」，看「芯片」一栏写的是 Apple M 系列还是 Intel。</div>
       </div>
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q2</span>从哪里下载？</summary>
+      <summary><span class="qnum">Q2</span>对电脑系统版本有什么要求？Win7 还能装吗？</summary>
+      <div class="answer">
+        <p><b>不能。</b>WorkBuddy 对系统版本有硬性要求，低于要求<b>直接无法启动</b>：</p>
+        <table>
+          <tr><th>系统</th><th>最低要求</th></tr>
+          <tr><td>Windows</td><td><b>Windows 10 及以上</b>，支持 Windows x64；ARM64 设备的支持情况以当前版本说明为准</td></tr>
+          <tr><td>macOS</td><td><b>macOS 12（Monterey）及以上</b></td></tr>
+        </table>
+        <p><b>明确不支持：</b>Windows 7 / 8 / 8.1 —— 这三个系统装不了，装上也无法启动。</p>
+        <div class="tip">查自己的系统版本：Windows 按 <b>Win + R</b> 输入 <b>winver</b> 回车；Mac 点左上角苹果图标 →「关于本机」。</div>
+        <div class="tip">公司统一采购的老电脑，<b>下单前先让 IT 确认系统版本</b>，避免买了装不上。</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="qnum">Q3</span>从哪里下载？</summary>
       <div class="answer">
         <p>官网首页即可下载：<a href="https://www.workbuddy.cn/" target="_blank" rel="noopener">https://www.workbuddy.cn/</a></p>
         <p class="pending"><b>待补充：</b>下载入口截图 / 具体点击路径</p>
@@ -294,7 +315,7 @@
     <h2>二、注册与认证</h2>
 
     <details class="qa">
-      <summary><span class="qnum">Q3</span>从官网自己注册，还是从我们这里注册？</summary>
+      <summary><span class="qnum">Q4</span>从官网自己注册，还是从我们这里注册？</summary>
       <div class="answer">
         <p>看你的使用场景：</p>
         <ul>
@@ -305,7 +326,7 @@
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q4</span>我已经注册过一个账号了，还需要重新注册吗？</summary>
+      <summary><span class="qnum">Q5</span>我已经注册过一个账号了，还需要重新注册吗？</summary>
       <div class="answer">
         <p>不需要。直接沿用已注册的账号即可。</p>
         <div class="tip">重复注册容易把数据分散在多个账号里，后续合并很麻烦，建议一开始就固定一个账号用下去。</div>
@@ -314,7 +335,7 @@
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q5</span>注册完成后第一步要做什么？</summary>
+      <summary><span class="qnum">Q6</span>注册完成后第一步要做什么？</summary>
       <div class="answer">
         <p>先完成账号实名认证。</p>
         <p>未实名认证的账号在后续购买、企业协作等环节会受限，建议注册后第一时间完成。</p>
@@ -328,18 +349,18 @@
     <h2>三、账号与登录</h2>
 
     <details class="qa">
-      <summary><span class="qnum">Q6</span>一个账号可以几个人同时登录吗？</summary>
+      <summary><span class="qnum">Q7</span>一个账号可以几个人同时登录吗？</summary>
       <div class="answer">
         <p>个人版不支持多人共用。</p>
-        <p>个人版账号与<b>一个微信或手机号</b>绑定，登录身份是唯一的，无法用于企业协作。如果确实需要多人使用，请看 Q7。</p>
+        <p>个人版账号与<b>一个微信或手机号</b>绑定，登录身份是唯一的，无法用于企业协作。如果确实需要多人使用，请看 Q8。</p>
       </div>
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q7</span>我想让团队一起用，怎么办？</summary>
+      <summary><span class="qnum">Q8</span>我想让团队一起用，怎么办？</summary>
       <div class="answer">
         <p>升级企业版。企业版可以在企业账户内统一管理成员，并<b>按需分配席位</b>；人员变动时，席位可以在账户内重新分配，不需要重新购买。</p>
-        <p>买完之后怎么把席位分给同事，见 Q13。</p>
+        <p>买完之后怎么把席位分给同事，见 Q14。</p>
       </div>
     </details>
   </section>
@@ -347,8 +368,8 @@
   <section id="s4">
     <h2>四、个人版 / 企业版怎么选</h2>
 
-    <details class="qa" id="q8">
-      <summary><span class="qnum">Q8</span>个人版和企业版主要区别是什么？</summary>
+    <details class="qa" id="q9">
+      <summary><span class="qnum">Q9</span>个人版和企业版主要区别是什么？</summary>
       <div class="answer">
         <p>核心区别在<b>协作能力</b>：</p>
         <table>
@@ -369,7 +390,7 @@
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q9</span>我想先试试，再决定买不买，可以吗？</summary>
+      <summary><span class="qnum">Q10</span>我想先试试，再决定买不买，可以吗？</summary>
       <div class="answer">
         <p>完全可以，也建议这样做。</p>
         <p>先下载个人版客户端用几天，把基本操作摸熟、确认确实能解决你的问题，再考虑是否升级企业版。手感是试出来的，别人讲再多不如自己上手跑一遍。</p>
@@ -380,8 +401,8 @@
   <section id="s5">
     <h2>五、关联与下单</h2>
 
-    <details class="qa" id="q10">
-      <summary><span class="qnum">Q10</span>为什么要先关联成为客户？我自己买不行吗？</summary>
+    <details class="qa" id="q11">
+      <summary><span class="qnum">Q11</span>为什么要先关联成为客户？我自己买不行吗？</summary>
       <div class="answer">
         <p>企业版走的是腾讯云渠道，流程上是<b>先确认能否关联，再关联，最后下单</b>：</p>
         <ol>
@@ -398,52 +419,52 @@
           <button class="copy" type="button" aria-label="复制关联邀请链接" data-copy="https://partner.cloud.tencent.com/invitation/1000083708816a71aed7331b7?inviteType=2&amp;activity_id=1">复制</button>
         </div>
         <p>自己去腾讯云后台通常找不到对应的自购入口，所以<b>下单前先联系我们核验企业名称和账号关联资格</b>，避免账号不符合关联条件，影响后续购买。</p>
-        <div class="tip">联系人：<b>梁喜乐</b>，电话 / 微信：13572927148（见 Q21）。</div>
+        <div class="tip">联系人：<b>梁喜乐</b>，电话 / 微信：13572927148（见 Q22）。</div>
         <p class="pending"><b>待补充：</b>关联操作的具体步骤截图</p>
       </div>
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q11</span>企业版在哪里购买？</summary>
+      <summary><span class="qnum">Q12</span>企业版在哪里购买？</summary>
       <div class="answer">
         <p>腾讯云官方下单页：</p>
         <p><a href="https://cloud.tencent.com/product/workbuddy-enterprise?Is=sdk-topnav" target="_blank" rel="noopener">https://cloud.tencent.com/product/workbuddy-enterprise?Is=sdk-topnav</a></p>
         <p>备用入口：<a href="https://copilot.tencent.com/pricing/" target="_blank" rel="noopener">https://copilot.tencent.com/pricing/</a></p>
-        <div class="tip">请先完成 Q10 的关联，再下单，否则下单会受阻。</div>
+        <div class="tip">请先完成 Q11 的关联，再下单，否则下单会受阻。</div>
         <div class="tip">请使用你已完成实名认证的那个账号登录后再购买，避免账号不一致导致权益归属到其他账户。</div>
         <div class="tip">购买时填写的<b>超级管理员手机号</b>很重要，它是后续登录管理后台、给成员发货的依据，请谨慎填写。</div>
       </div>
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q12</span>一个腾讯云账号能买几个 WorkBuddy 账号？</summary>
+      <summary><span class="qnum">Q13</span>一个腾讯云账号能买几个 WorkBuddy 账号？</summary>
       <div class="answer">
         <p>可以买<b>多个</b>。按需购买，买完再分配给团队成员即可（1 人起购）。</p>
         <p class="pending"><b>待补充：</b>单个腾讯云账号可购买的数量上限</p>
       </div>
     </details>
 
-    <details class="qa" id="q13">
-      <summary><span class="qnum">Q13</span>买完之后怎么分配给同事？</summary>
+    <details class="qa" id="q14">
+      <summary><span class="qnum">Q14</span>买完之后怎么分配给同事？</summary>
       <div class="answer">
         <p>在<b>管理后台</b>的成员管理里点「添加成员」，填写成员信息即可（会跳转到腾讯统一身份平台）。</p>
-        <div class="tip">添加后成员账号是<b>未激活状态</b>，需要同事本人完成激活，步骤见 Q17。</div>
+        <div class="tip">添加后成员账号是<b>未激活状态</b>，需要同事本人完成激活，步骤见 Q18。</div>
         <p>详细配置指引：<a href="https://www.codebuddy.cn/docs/ide/Codebuddy-enterprise-edition/Codebuddy-enterprise-purchase" target="_blank" rel="noopener">https://www.codebuddy.cn/docs/ide/Codebuddy-enterprise-edition/Codebuddy-enterprise-purchase</a></p>
         <p class="pending"><b>待补充：</b>成员添加界面的截图</p>
       </div>
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q14</span>购买完成后，第一步做什么？</summary>
+      <summary><span class="qnum">Q15</span>购买完成后，第一步做什么？</summary>
       <div class="answer">
         <p>作为企业的第一个账号：<b>先创建企业账号，然后邀请其他成员进入。</b></p>
         <p>顺序别反，先把企业账号建起来，后续成员邀请、席位分配才顺。</p>
-        <div class="tip">企业账号建好后，登录<b>管理后台</b>操作，后台地址见 <a href="#q16">Q16</a>。</div>
+        <div class="tip">企业账号建好后，登录<b>管理后台</b>操作，后台地址见 <a href="#q16">Q17</a>。</div>
       </div>
     </details>
 
-    <details class="qa" id="q15">
-      <summary><span class="qnum">Q15</span>价格是多少？能开发票吗？</summary>
+    <details class="qa" id="q16">
+      <summary><span class="qnum">Q16</span>价格是多少？能开发票吗？</summary>
       <div class="answer">
         <p>目前企业版价格为 <b>198 元 / 账号 / 月</b>，发票可以在腾讯云后台自行开具。</p>
         <p class="pending"><b>待补充：</b>是否有年付优惠 / 多席位折扣</p>
@@ -454,8 +475,8 @@
   <section id="s6">
     <h2>六、后台与团队管理</h2>
 
-    <details class="qa" id="q16">
-      <summary><span class="qnum">Q16</span>已经成为会员了，管理后台在哪里？<span class="flag-hot">高频</span></summary>
+    <details class="qa" id="q17">
+      <summary><span class="qnum">Q17</span>已经成为会员了，管理后台在哪里？<span class="flag-hot">高频</span></summary>
       <div class="answer">
         <p>登录地址（复制粘贴到浏览器打开）：</p>
         <div class="url-box">
@@ -471,7 +492,7 @@
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q17</span>添加成员之后，同事怎么激活？</summary>
+      <summary><span class="qnum">Q18</span>添加成员之后，同事怎么激活？</summary>
       <div class="answer">
         <p>添加成员后，该账号处于<b>未激活状态</b>，需要同事本人完成一次激活：</p>
         <ol>
@@ -484,7 +505,7 @@
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q18</span>成员的使用额度是怎么算的？用完了怎么办？</summary>
+      <summary><span class="qnum">Q19</span>成员的使用额度是怎么算的？用完了怎么办？</summary>
       <div class="answer">
         <p>每个企业成员默认有 <b>2000 积分</b>的配额，用完会无法继续使用，需要管理员调整。</p>
         <ul>
@@ -502,7 +523,7 @@
     <h2>七、常见困惑</h2>
 
     <details class="qa">
-      <summary><span class="qnum">Q19</span>后台显示的还是 CodeBuddy，是不是买错了？</summary>
+      <summary><span class="qnum">Q20</span>后台显示的还是 CodeBuddy，是不是买错了？</summary>
       <div class="answer">
         <p>没有买错，不冲突。</p>
         <p><b>同一个账号在 WorkBuddy 和 CodeBuddy 里都能使用</b>，后台界面上出现 CodeBuddy 的字样是正常的，不影响你使用企业版的功能。</p>
@@ -510,7 +531,7 @@
     </details>
 
     <details class="qa">
-      <summary><span class="qnum">Q20</span>企业知识库、ima、乐享知识库，这几个有什么区别？</summary>
+      <summary><span class="qnum">Q21</span>企业知识库、ima、乐享知识库，这几个有什么区别？</summary>
       <div class="answer">
         <ul>
           <li><b>企业知识库</b>：就是管理后台里的知识库，团队共用</li>
@@ -524,8 +545,8 @@
   <section id="s8">
     <h2>八、获取帮助</h2>
 
-    <details class="qa" id="q21">
-      <summary><span class="qnum">Q21</span>使用中遇到问题，怎么找你们？</summary>
+    <details class="qa" id="q22">
+      <summary><span class="qnum">Q22</span>使用中遇到问题，怎么找你们？</summary>
       <div class="answer">
         <p>官方有一份常见问题文档，安装登录、模型配置、Bot 连接、日志排查、账户与退款这类问题，可以先在里面查：</p>
         <div class="url-box">
@@ -545,8 +566,8 @@
   <section id="s9">
     <h2>九、手机与移动端</h2>
 
-    <details class="qa" id="q22">
-      <summary><span class="qnum">Q22</span>手机上能用 WorkBuddy 吗？必须开着电脑吗？</summary>
+    <details class="qa" id="q23">
+      <summary><span class="qnum">Q23</span>手机上能用 WorkBuddy 吗？必须开着电脑吗？</summary>
       <div class="answer">
         <p>能。手机端有 <b>iOS / Android / 鸿蒙 App</b> 和 <b>微信小程序</b> 两个入口，支持两种模式：</p>
         <table>
@@ -558,8 +579,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q23">
-      <summary><span class="qnum">Q23</span>手机上能访问手机里的资料吗？能像电脑一样操作文件吗？</summary>
+    <details class="qa" id="q24">
+      <summary><span class="qnum">Q24</span>手机上能访问手机里的资料吗？能像电脑一样操作文件吗？</summary>
       <div class="answer">
         <p>不能像电脑那样自由浏览手机文件夹。<b>只能把文件主动交给它</b>，它不能自己去翻。</p>
         <p>点输入框旁边的「+」，有四个入口：</p>
@@ -584,8 +605,8 @@
   <section id="s10">
     <h2>十、企业微信集成</h2>
 
-    <details class="qa" id="q24">
-      <summary><span class="qnum">Q24</span>企业微信和 WorkBuddy 打通到什么程度？能做什么？</summary>
+    <details class="qa" id="q25">
+      <summary><span class="qnum">Q25</span>企业微信和 WorkBuddy 打通到什么程度？能做什么？</summary>
       <div class="answer">
         <p>分两个层次：</p>
         <table>
@@ -605,8 +626,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q25">
-      <summary><span class="qnum">Q25</span>想用企业微信集成，需要满足什么条件？</summary>
+    <details class="qa" id="q26">
+      <summary><span class="qnum">Q26</span>想用企业微信集成，需要满足什么条件？</summary>
       <div class="answer">
         <p>三件事同时满足：</p>
         <ol>
@@ -620,8 +641,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q26">
-      <summary><span class="qnum">Q26</span>用企业微信登录，是企业账号还是个人账号？积分怎么算？</summary>
+    <details class="qa" id="q27">
+      <summary><span class="qnum">Q27</span>用企业微信登录，是企业账号还是个人账号？积分怎么算？</summary>
       <div class="answer">
         <p>登录后是<b>企业版身份</b>，绑定你所在的企业微信组织架构，不是个人账号。</p>
         <table>
@@ -639,8 +660,8 @@
   <section id="s11">
     <h2>十一、Outlook 邮件接入</h2>
 
-    <details class="qa" id="q27">
-      <summary><span class="qnum">Q27</span>Outlook 邮箱能接到 WorkBuddy 吗？个人邮箱行吗？</summary>
+    <details class="qa" id="q28">
+      <summary><span class="qnum">Q28</span>Outlook 邮箱能接到 WorkBuddy 吗？个人邮箱行吗？</summary>
       <div class="answer">
         <p>能，通过<b>自定义 MCP 连接器</b>接入。个人 Outlook 邮箱就可以，不需要 Microsoft 365 订阅。</p>
         <table>
@@ -653,8 +674,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q28">
-      <summary><span class="qnum">Q28</span>企业版 Outlook 接入，需要管理员权限吗？</summary>
+    <details class="qa" id="q29">
+      <summary><span class="qnum">Q29</span>企业版 Outlook 接入，需要管理员权限吗？</summary>
       <div class="answer">
         <p>不一定，取决于企业 Microsoft 365 的租户设置：</p>
         <table>
@@ -668,8 +689,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q29">
-      <summary><span class="qnum">Q29</span>Outlook 接上之后能做什么？能帮我给客户回邮件吗？</summary>
+    <details class="qa" id="q30">
+      <summary><span class="qnum">Q30</span>Outlook 接上之后能做什么？能帮我给客户回邮件吗？</summary>
       <div class="answer">
         <p>可以。主要能力：</p>
         <table>
@@ -693,8 +714,8 @@
   <section id="s12">
     <h2>十二、专家与技能</h2>
 
-    <details class="qa" id="q30">
-      <summary><span class="qnum">Q30</span>专家和专家团是什么？它们自带知识吗？知识会更新吗？</summary>
+    <details class="qa" id="q31">
+      <summary><span class="qnum">Q31</span>专家和专家团是什么？它们自带知识吗？知识会更新吗？</summary>
       <div class="answer">
         <p>专家是<b>「角色切换」</b>机制：用「人设 + 方法论 + 工具链」，让 WorkBuddy 以某个领域的专家身份来完成任务。专家团则是<b>「协作执行」</b>机制：由团长拆解任务、分派给多位专家并行执行，最后整合交付。</p>
         <p><b>专家本身不是知识库。</b>官方说明：专家不主动获取系统权限，只处理你主动提供的对话和上传文件；只有配备了 Skill 或 MCP，才会在你授权下间接访问外部服务。</p>
@@ -711,8 +732,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q31">
-      <summary><span class="qnum">Q31</span>Skill、专家、专家团有什么区别？该怎么选？</summary>
+    <details class="qa" id="q32">
+      <summary><span class="qnum">Q32</span>Skill、专家、专家团有什么区别？该怎么选？</summary>
       <div class="answer">
         <table>
           <tr><th>类型</th><th>本质</th><th>什么时候用</th></tr>
@@ -728,8 +749,8 @@
   <section id="s13">
     <h2>十三、AI 准确性与可靠性</h2>
 
-    <details class="qa" id="q32">
-      <summary><span class="qnum">Q32</span>AI 会编数据吗？WorkBuddy 的幻觉问题怎么避免？</summary>
+    <details class="qa" id="q33">
+      <summary><span class="qnum">Q33</span>AI 会编数据吗？WorkBuddy 的幻觉问题怎么避免？</summary>
       <div class="answer">
         <p>会。WorkBuddy 底层调用的是大语言模型，<b>只要使用大模型，就可能出现「幻觉」</b>——生成看起来合理、但并不真实的内容。这一点目前无法彻底消除，但可以识别和规避。</p>
         <p>办公场景里的幻觉主要分两类：</p>
@@ -760,8 +781,8 @@
   <section id="s14">
     <h2>十四、系统对接与数据安全</h2>
 
-    <details class="qa" id="q33">
-      <summary><span class="qnum">Q33</span>ERP 等外部系统能直接对接吗？要不要额外付费？</summary>
+    <details class="qa" id="q34">
+      <summary><span class="qnum">Q34</span>ERP 等外部系统能直接对接吗？要不要额外付费？</summary>
       <div class="answer">
         <p>能对接，前提是对方系统有可用的数据出口。常见有三种方式：</p>
         <table>
@@ -776,8 +797,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q34">
-      <summary><span class="qnum">Q34</span>把接口权限给 AI，会不会有改数据的风险？</summary>
+    <details class="qa" id="q35">
+      <summary><span class="qnum">Q35</span>把接口权限给 AI，会不会有改数据的风险？</summary>
       <div class="answer">
         <p>风险是真实存在的。关键不在 AI，而在<b>用哪个账号接入</b>。</p>
         <table>
@@ -791,8 +812,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q35">
-      <summary><span class="qnum">Q35</span>社保这类系统登录，要把账号密码交给它吗？</summary>
+    <details class="qa" id="q36">
+      <summary><span class="qnum">Q36</span>社保这类系统登录，要把账号密码交给它吗？</summary>
       <div class="answer">
         <p>不需要。这类网页系统通常通过<b>扫码登录</b>，不需要把账号密码交给 AI。</p>
         <p>但仍要注意，扫码本身也是一次授权，建议：</p>
@@ -805,8 +826,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q36">
-      <summary><span class="qnum">Q36</span>个人版怎么保证数据安全？除了脱敏还要做什么？</summary>
+    <details class="qa" id="q37">
+      <summary><span class="qnum">Q37</span>个人版怎么保证数据安全？除了脱敏还要做什么？</summary>
       <div class="answer">
         <p>脱敏只解决一个环节，数据安全要分三层看：</p>
         <table>
@@ -821,8 +842,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q37">
-      <summary><span class="qnum">Q37</span>企业版管理员能看到同事的文件吗？同事之间能互相看到吗？</summary>
+    <details class="qa" id="q38">
+      <summary><span class="qnum">Q38</span>企业版管理员能看到同事的文件吗？同事之间能互相看到吗？</summary>
       <div class="answer">
         <table>
           <tr><th>对象</th><th>能不能看到</th></tr>
@@ -835,8 +856,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q38">
-      <summary><span class="qnum">Q38</span>手机端鸿蒙打不开、电脑和手机不同步怎么办？</summary>
+    <details class="qa" id="q39">
+      <summary><span class="qnum">Q39</span>手机端鸿蒙打不开、电脑和手机不同步怎么办？</summary>
       <div class="answer">
         <p>两个问题分开看：</p>
         <table>
@@ -853,8 +874,8 @@
   <section id="s15">
     <h2>十五、席位与费用</h2>
 
-    <details class="qa" id="q39">
-      <summary><span class="qnum">Q39</span>买了几个席位，同事用不上，能退吗？<span class="flag-hot">高频</span></summary>
+    <details class="qa" id="q40">
+      <summary><span class="qnum">Q40</span>买了几个席位，同事用不上，能退吗？<span class="flag-hot">高频</span></summary>
       <div class="answer">
         <p>能，但走的是「<b>席位缩容</b>」，不是订单退款。这两条路互不影响：</p>
         <table>
@@ -870,8 +891,8 @@
       </div>
     </details>
 
-    <details class="qa" id="q40">
-      <summary><span class="qnum">Q40</span>明年续费时能少买几个席位吗？</summary>
+    <details class="qa" id="q41">
+      <summary><span class="qnum">Q41</span>明年续费时能少买几个席位吗？</summary>
       <div class="answer">
         <p>可以，但<b>续费页面本身改不了数量</b>，必须先把席位缩容，再续费：</p>
         <ol>
